@@ -1,0 +1,46 @@
+@import '../variables';
+
+.info-wrapper {
+  display: flex;
+}
+
+.info-poster {
+  width: 300px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  &__title {
+    margin-left: 50px;
+    font-size: 48px;
+  }
+  &__rating {
+    text-align: center;
+    width: 100px;
+    height: fit-content;
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 800;
+    &--normal {
+      background-color: #858585;
+    }
+    &--high {
+      background-color: #00941b;
+    }
+    &--low {
+      background-color: #ff2c2c;
+    }
+  }
+}
+
+.info-description {
+  margin-top: 50px;
+  margin-left: 50px;
+  &__title {
+    font-size: 30px;
+  }
+  &__text {
+    font-size: 20px;
+  }
+}

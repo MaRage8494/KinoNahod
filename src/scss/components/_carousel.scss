@@ -1,0 +1,43 @@
+.carousel {
+  width: 250px;
+  height: 400px;
+  &__title {
+    font-size: 32px;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  &__image {
+    height: 380px;
+  }
+  &--posters {
+    height: 400px;
+    width: 700px;
+  }
+  &--similar {
+    height: 400px;
+    width: 263px;
+  }
+}
+.similar {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.posters {
+  margin-top: 30px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.carousels {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}

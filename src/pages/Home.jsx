@@ -23,9 +23,6 @@ function Home() {
       });
   }, []);
 
-  if (isLoading) {
-    return [...new Array(10)].map((_, id) => <SceletonMovie key={id} />);
-  }
   return (
     <>
       <div className="content__top">
@@ -33,17 +30,19 @@ function Home() {
         <Sort />
       </div>
       <div className="content__items">
-        {Movies.docs.map((movie) => (
-          <MovieBlock
-            key={movie.id}
-            id={movie.id}
-            title={movie.name}
-            imageUrl={movie.poster}
-            year={movie.year}
-            genre={movie.genres[0].name}
-            rating={movie.rating.imdb}
-          />
-        ))}
+        {isLoading
+          ? [...new Array(10)].map((_, id) => <SceletonMovie key={id} />)
+          : Movies.docs.map((movie) => (
+              <MovieBlock
+                key={movie.id}
+                id={movie.id}
+                title={movie.name}
+                imageUrl={movie.poster}
+                year={movie.year}
+                genre={movie.genres[0].name}
+                rating={movie.rating.imdb}
+              />
+            ))}
       </div>
     </>
   );

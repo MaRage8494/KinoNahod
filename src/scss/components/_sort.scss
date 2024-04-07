@@ -31,9 +31,12 @@
     overflow: hidden;
     padding: 10px 0;
     width: 160px;
+    z-index: 2;
 
     ul {
+      padding: 0 10px;
       overflow: hidden;
+      margin-bottom: 5px;
       li {
         padding: 12px 20px;
         cursor: pointer;

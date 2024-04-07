@@ -3,7 +3,7 @@ import React from 'react';
 export default function Sort() {
   const [isVisible, setVisible] = React.useState(false);
   const [selected, setSelected] = React.useState(0);
-  const list = ['популярности', 'цене', 'алфавиту'];
+  const list = ['году', 'стране', 'возрастному рейтингу'];
 
   const sortName = list[selected];
 

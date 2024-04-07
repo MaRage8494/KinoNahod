@@ -5,14 +5,13 @@ import { useParams } from 'react-router-dom';
 import MovieInfo from '../components/MovieInfo.jsx';
 import SimilarMovies from '../components/SimilarMovies.jsx';
 import Posters from '../components/Posters.jsx';
+import Actors from '../components/Actors.jsx';
 
 function Movie() {
   const { id } = useParams();
   const [movieData, setMovieData] = React.useState([]);
   const [posters, setPosters] = React.useState([]);
   const [isLoading, setLoading] = React.useState(true);
-  //   console.log(Movie);
-  //   console.log(env.PORT);
 
   React.useEffect(() => {
     const fetchData = async () => {
@@ -34,11 +33,8 @@ function Movie() {
 
     fetchData();
   }, [id]);
-  console.log(Movie);
+  console.log(movieData);
 
-  if (isLoading) {
-    return <h1>Загрузка...</h1>;
-  }
   return (
     <>
       {isLoading ? (
@@ -52,6 +48,7 @@ function Movie() {
             rating={movieData.rating.imdb}
           />
           {movieData.type === 'movie' ? '' : <div className="series"></div>}
+          <Actors actors={movieData.persons} />
           <div className="carousels">
             <Posters posters={posters} />
             <SimilarMovies movies={movieData.similarMovies} />

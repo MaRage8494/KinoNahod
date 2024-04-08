@@ -23,7 +23,7 @@ function MovieInfo({ poster, name, rating, description }) {
         </div>
         <div className="info-description">
           <h4 className="info-description__title">Описание</h4>
-          {description === '' ? (
+          {!description || description === '' ? (
             <h2>Нет информации об описании</h2>
           ) : (
             <span className="info-description__text">{description}</span>

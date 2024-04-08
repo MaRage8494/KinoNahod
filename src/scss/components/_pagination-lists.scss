@@ -1,3 +1,4 @@
+@import '../variables';
 .actors {
   &__title {
     font-size: 35px;
@@ -37,4 +38,13 @@
     margin-top: 30px;
     margin-left: 30px;
   }
+}
+.page-link.active,
+.active > .page-link {
+  background-color: $orange;
+  border-color: $orange;
+}
+
+.page-link {
+  color: $orange;
 }

@@ -3,10 +3,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function SimilarMovies({ movies }) {
+  console.log(movies);
   return (
     <div className="similar">
       <h1 className="carousel__title">Похожие фильмы</h1>
-      {movies.length === 0 ? (
+      {!movies || movies.length === 0 ? (
         <h2>Нет информации о похожих фильмах</h2>
       ) : (
         <Carousel className="carousel carousel--similar" data-bs-theme="light">

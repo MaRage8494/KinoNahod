@@ -5,7 +5,7 @@ function Posters({ posters }) {
   return (
     <div className="posters">
       <h1 className="carousel__title">Постеры</h1>
-      {posters.length === 0 ? (
+      {posters.docs.length === 0 ? (
         <h2>Нет информации о постерах</h2>
       ) : (
         <Carousel className="carousel carousel--posters" data-bs-theme="light">

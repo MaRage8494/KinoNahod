@@ -48,7 +48,8 @@ function Movie() {
             rating={movieData.rating.imdb}
           />
           {movieData.type === 'movie' ? '' : <div className="series"></div>}
-          <Actors actors={movieData.persons} />
+          <h2 className="actors__title">Актёрский состав:</h2>
+          <Actors actors={movieData.persons || ''} />
           <div className="carousels">
             <Posters posters={posters} />
             <SimilarMovies movies={movieData.similarMovies} />

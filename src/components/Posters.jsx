@@ -2,25 +2,18 @@ import Carousel from 'react-bootstrap/Carousel';
 import React from 'react';
 
 function Posters({ posters }) {
+  console.log(posters);
+  if (!posters || !Array.isArray(posters.docs)) {
+    return <h2 className="stub">Нет информации о постерах</h2>;
+  }
   return (
-    <div className="posters">
-      <h1 className="carousel__title">Постеры</h1>
-      {posters.docs.length === 0 ? (
-        <h2>Нет информации о постерах</h2>
-      ) : (
-        <Carousel className="carousel carousel--posters" data-bs-theme="light">
-          {posters.docs.map((poster) => (
-            <Carousel.Item key={poster.id}>
-              <img
-                src={poster.previewUrl}
-                alt={poster.name}
-                className="d-block w-100 carousel__image"
-              />
-            </Carousel.Item>
-          ))}
-        </Carousel>
-      )}
-    </div>
+    <Carousel className="carousel carousel--posters" data-bs-theme="dark">
+      {posters.docs.map((poster) => (
+        <Carousel.Item key={poster.id} className="carousel__image-block">
+          <img src={poster.previewUrl} alt={poster.name} className="d-flex carousel__image" />
+        </Carousel.Item>
+      ))}
+    </Carousel>
   );
 }
 

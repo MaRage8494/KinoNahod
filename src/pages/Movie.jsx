@@ -6,11 +6,13 @@ import MovieInfo from '../components/MovieInfo.jsx';
 import SimilarMovies from '../components/SimilarMovies.jsx';
 import Posters from '../components/Posters.jsx';
 import Actors from '../components/Actors.jsx';
+import Reviews from '../components/Reviews.jsx';
 
 function Movie() {
   const { id } = useParams();
   const [movieData, setMovieData] = React.useState([]);
   const [posters, setPosters] = React.useState([]);
+  const [reviews, setReviews] = React.useState([]);
   const [isLoading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -24,6 +26,9 @@ function Movie() {
           `/image?page=1&limit=10&selectFields=previewUrl&movieId=${id}`,
         );
         setPosters(postersResponse.data);
+
+        const reviewsResponse = await axios.get(`review?page=1&limit=5&movieId=${id}`);
+        setReviews(reviewsResponse.data);
       } catch (error) {
         console.error('Ошибка при получении данных:', error);
       } finally {
@@ -48,12 +53,20 @@ function Movie() {
             rating={movieData.rating.imdb}
           />
           {movieData.type === 'movie' ? '' : <div className="series"></div>}
-          <h2 className="actors__title">Актёрский состав:</h2>
+          <h2 className="actors__title">Актёрский состав</h2>
           <Actors actors={movieData.persons || ''} />
           <div className="carousels">
-            <Posters posters={posters} />
-            <SimilarMovies movies={movieData.similarMovies} />
+            <div className="posters">
+              <h1 className="carousel__title">Постеры</h1>
+              <Posters posters={posters} />
+            </div>
+            <div className="similar">
+              <h1 className="carousel__title">Похожие фильмы</h1>
+              <SimilarMovies movies={movieData.similarMovies} />
+            </div>
           </div>
+          <h2 className="reviews__title">Отзывы пользователей</h2>
+          <Reviews reviews={reviews} pages={reviews.pages} movieId={id} />
         </>
       )}
     </>

@@ -9,10 +9,15 @@
   }
   &__image {
     height: 380px;
+    margin: auto;
+  }
+  &__image-block {
+    overflow: hidden;
   }
   &--posters {
+    background-color: rgb(255, 255, 255);
     height: 400px;
-    width: 700px;
+    width: 600px;
   }
   &--similar {
     height: 400px;

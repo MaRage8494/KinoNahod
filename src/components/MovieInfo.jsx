@@ -10,7 +10,7 @@ function MovieInfo({ poster, name, rating, description }) {
   return (
     <div className="info-wrapper">
       {poster === '' ? (
-        <h2>Нет информации о постере</h2>
+        <h2 className="stub">Нет информации о постере</h2>
       ) : (
         <img className="info-poster" src={poster} alt={name} />
       )}
@@ -24,7 +24,7 @@ function MovieInfo({ poster, name, rating, description }) {
         <div className="info-description">
           <h4 className="info-description__title">Описание</h4>
           {!description || description === '' ? (
-            <h2>Нет информации об описании</h2>
+            <h2 className="stub">Нет информации об описании</h2>
           ) : (
             <span className="info-description__text">{description}</span>
           )}

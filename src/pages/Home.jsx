@@ -6,6 +6,8 @@ import MovieBlock from '../components/MovieBlock/index.jsx';
 import Sort from '../components/Sort.jsx';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSortField, setSortType } from '../redux/slices/sortSlice.js';
+import MyPagination from '../components/MyPagination.jsx';
+import { setMoviePage } from '../redux/slices/pagesSlice.js';
 
 function Home() {
   const [Movies, setMovies] = React.useState([]);
@@ -13,17 +15,20 @@ function Home() {
 
   const dispatch = useDispatch();
   const { sortField, sortType } = useSelector((state) => state.sortReducer);
+  const { moviePage } = useSelector((state) => state.pagesReducer);
 
   console.log(sortField);
   console.log(sortType);
 
   console.log(Movies);
+  console.log(moviePage);
 
   React.useEffect(() => {
     setLoading(true);
     axios
-      .get(`/movie?page=1&limit=10&lists=top250`, {
+      .get(`/movie?limit=10&lists=top250`, {
         params: {
+          page: moviePage,
           sortField: sortField.sortProperty,
           sortType: sortType,
         },
@@ -36,7 +41,7 @@ function Home() {
         console.error('Ошибка при получении фильмов:', err);
         setLoading(false);
       });
-  }, [sortField, sortType]);
+  }, [sortField, sortType, moviePage]);
 
   return (
     <>
@@ -64,6 +69,11 @@ function Home() {
               />
             ))}
       </div>
+      <MyPagination
+        pages={Movies.pages}
+        currentPage={moviePage}
+        setCurrentPage={(page) => dispatch(setMoviePage(page))}
+      />
     </>
   );
 }

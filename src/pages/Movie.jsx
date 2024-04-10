@@ -8,6 +8,9 @@ import Posters from '../components/Posters.jsx';
 import Actors from '../components/Actors.jsx';
 import Reviews from '../components/Reviews.jsx';
 
+// import euphoria from './euphoria.json';
+import Series from '../components/Series.jsx';
+
 function Movie() {
   const { id } = useParams();
   const [movieData, setMovieData] = React.useState([]);
@@ -40,6 +43,12 @@ function Movie() {
   }, [id]);
   console.log(movieData);
 
+  // console.log(euphoria);
+  // React.useEffect(() => {
+  //   setMovieData(euphoria);
+  //   setLoading(false);
+  // }, []);
+
   return (
     <>
       {isLoading ? (
@@ -52,7 +61,14 @@ function Movie() {
             description={movieData.description}
             rating={movieData.rating.imdb}
           />
-          {movieData.type === 'movie' ? '' : <div className="series"></div>}
+          {movieData.type === 'movie' ? (
+            ''
+          ) : (
+            <div className="series">
+              <h2 className="series__title">Сезоны и серии</h2>
+              <Series seriesInfo={movieData.seasonsInfo} />
+            </div>
+          )}
           <h2 className="actors__title">Актёрский состав</h2>
           <Actors actors={movieData.persons || ''} />
           <div className="carousels">

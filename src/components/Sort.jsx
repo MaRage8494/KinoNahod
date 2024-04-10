@@ -1,8 +1,9 @@
 import React from 'react';
 
 export default function Sort({ value, method, onChangeSort, onChangeType }) {
-  console.log(value);
   const [isVisible, setVisible] = React.useState(false);
+  const sortRef = React.useRef();
+
   const list = [
     { name: 'году', sortProperty: 'year' },
     { name: 'стране', sortProperty: 'countries.name' },
@@ -16,11 +17,23 @@ export default function Sort({ value, method, onChangeSort, onChangeType }) {
 
   const onClickSortType = function (type) {
     onChangeType(type === 1 ? -1 : 1);
-    console.log(method);
   };
 
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.composedPath().includes(sortRef.current)) {
+        setVisible(false);
+      }
+    };
+    document.body.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.body.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="sort">
+    <div ref={sortRef} className="sort">
       <div className="sort__label">
         <svg
           className={`sort__arrow${method === 1 ? '' : '--desc '}`}

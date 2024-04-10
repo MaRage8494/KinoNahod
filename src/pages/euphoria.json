@@ -1,0 +1,759 @@
+{
+  "status": null,
+  "externalId": {
+    "imdb": "tt8772296",
+    "tmdb": 85552,
+    "kpHD": "47a255c711dfe90bb55020e8d6575e44"
+  },
+  "rating": {
+    "kp": 7.519,
+    "imdb": 8.3,
+    "filmCritics": 0,
+    "russianFilmCritics": 100,
+    "await": null
+  },
+  "votes": {
+    "kp": 275364,
+    "imdb": 238622,
+    "filmCritics": 0,
+    "russianFilmCritics": 6,
+    "await": 492
+  },
+  "backdrop": {
+    "url": "https://image.openmoviedb.com/kinopoisk-ott-images/1652588/2a0000017e3efaf66fb0a4c5dc058e3f0073/orig",
+    "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/1652588/2a0000017e3efaf66fb0a4c5dc058e3f0073/x1000"
+  },
+  "images": {
+    "postersCount": 11,
+    "backdropsCount": 14,
+    "framesCount": 67
+  },
+  "productionCompanies": [
+    {
+      "name": "A24",
+      "url": "https://www.themoviedb.org/t/p/original/1ZXsGaFPgrgS6ZZGS37AqD5uU12.png",
+      "previewUrl": "https://www.themoviedb.org/t/p/w500/1ZXsGaFPgrgS6ZZGS37AqD5uU12.png"
+    }
+  ],
+  "spokenLanguages": [
+    {
+      "name": "English",
+      "nameEn": "English"
+    }
+  ],
+  "id": 1178445,
+  "type": "tv-series",
+  "name": "Эйфория",
+  "description": "17-летняя Ру Беннетт возвращается домой после лечения в реабилитационной клинике. Не теряя времени, она опять берется за старые привычки — наркотики и тусовки. Однако появление в городе девушки Джулс становится для Ру знаком надежды.",
+  "distributors": {
+    "distributor": null,
+    "distributorRelease": null
+  },
+  "premiere": {
+    "world": "2019-06-16T00:00:00.000Z",
+    "russia": "2019-06-17T00:00:00.000Z",
+    "digital": "2019-06-16T00:00:00.000Z"
+  },
+  "slogan": "feel something.",
+  "year": 2019,
+  "poster": {
+    "url": "https://image.openmoviedb.com/kinopoisk-images/4303601/d31e9b97-89ab-4502-8d01-7263d595b122/orig",
+    "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/4303601/d31e9b97-89ab-4502-8d01-7263d595b122/x1000"
+  },
+  "facts": [
+    {
+      "value": "<a href=\"/name/5195376/\" class=\"all\">Ангус Клауд</a>, претендовавший на роль Феско, получил её моментально.",
+      "type": "FACT",
+      "spoiler": false
+    },
+    {
+      "value": "Фотомодель и актриса <a href=\"/name/4762684/\" class=\"all\">Барби Феррейра</a> проходила кинопробы раз 7, прежде чем ей дали роль Кэтрин.",
+      "type": "FACT",
+      "spoiler": false
+    },
+    {
+      "value": "В сюжетной линии употребления Ру наркотиков создатель сериала <a href=\"/name/125/\" class=\"all\">Сэм Левинсон</a> использовал воспоминания о своём собственном пристрастии к наркотикам в подростковом возрасте.",
+      "type": "FACT",
+      "spoiler": false
+    },
+    {
+      "value": "Выписывая истории Джулс и Кэт, создатель сериала <a href=\"/name/125/\" class=\"all\">Сэм Левинсон</a> отталкивался от биографий, соответственно, <a href=\"/name/4994033/\" class=\"all\">Хантер Шафер</a> и <a href=\"/name/4762684/\" class=\"all\">Барби Феррейры</a>.",
+      "type": "FACT",
+      "spoiler": false
+    },
+    {
+      "value": "В названиях всех серий первого сезона, за исключением серий 7 и 8, использованы названия песен в стиле рэп. Даже название первой серии «Пилот» является названием одной из композиций <a href=\"/name/227833/\" class=\"all\">Кёртиса Джексона</a>, известного под сценическим псевдонимом 50 cent.",
+      "type": "FACT",
+      "spoiler": false
+    },
+    {
+      "value": "Сцена стычки между Ру и её матерью Лесли во второй серии была чистейшей воды импровизацией. Автор сценария и режиссёр <a href=\"/name/125/\" class=\"all\">Сэм Левинсон</a> сказал Лесли в исполнении <a href=\"/name/517854/\" class=\"all\">Ники Кинг</a>: «Что бы ни случилось, не давай ей уйти».",
+      "type": "FACT",
+      "spoiler": false
+    },
+    {
+      "value": "Когда начались съёмки пилотной серии, из актёрского состава вдруг решил уйти <a href=\"/name/2622530/\" class=\"all\">Астро</a>, участник первого сезона шоу X Factor (2011) и рэпер. О причинах его решения ничего не известно, однако утверждают, будто его смущала необходимость играть в сценах, которые не были прописаны в сценарии. Утверждают также, будто он выдвинул предложение, чтобы его герой участвовал в гомосексуальных сценах в более поздних эпизодах. После длительных разборок с продюсерами было принято решение заменить его на Элджи Смита.",
+      "type": "FACT",
+      "spoiler": false
+    },
+    {
+      "value": "<a href=\"/name/1532045/\" class=\"all\">Сидни Суини</a>, которая играет в сериале популярную Кэсси из группы поддержки, занервничала, когда дело дошло до съёмок в сценах с «обнажёнкой», ей даже потребовалась продолжительная беседа с мамой. Как бы то ни было, впоследствии 21-летняя актриса заявила, что гордится тем, что ей довелось поработать в таком проекте.",
+      "type": "FACT",
+      "spoiler": false
+    },
+    {
+      "value": "Работа над вторым сезоном была отложена буквально в самый последний момент из-за пандемии коронавируса. <a href=\"/name/125/\" class=\"all\">Сэм Левинсон</a> специально написал сценарии двух дополнительных серий, которые можно было снимать в условиях ковидных ограничений.",
+      "type": "FACT",
+      "spoiler": false
+    },
+    {
+      "value": "За время съёмок <a href=\"/name/4545715/\" class=\"all\">Джейкоб Элорди</a> и <a href=\"/name/4994033/\" class=\"all\">Хантер Шафер</a> подружились и нередко обсуждали друг с другом своих персонажей. Полагая, что так им удастся лучше передать противоречивые чувства, которые они в тот момент друг к другу испытывали, они специально не обсуждали сцену, в которой он ей признаётся в том, что выдавал себя за Тайлера.",
+      "type": "FACT",
+      "spoiler": true
+    }
+  ],
+  "genres": [
+    {
+      "name": "драма"
+    }
+  ],
+  "countries": [
+    {
+      "name": "США"
+    }
+  ],
+  "seasonsInfo": [
+    {
+      "number": 1,
+      "episodesCount": 10
+    },
+    {
+      "number": 2,
+      "episodesCount": 8
+    }
+  ],
+  "persons": [
+    {
+      "id": 2317683,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2317683.jpg",
+      "name": "Зендея",
+      "enName": "Zendaya",
+      "description": "Rue Bennett",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 4994033,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_4994033.jpg",
+      "name": "Хантер Шафер",
+      "enName": "Hunter Schafer",
+      "description": "Jules Vaughn",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 4545715,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_4545715.jpg",
+      "name": "Джейкоб Элорди",
+      "enName": "Jacob Elordi",
+      "description": "Nate Jacobs",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 4762684,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_4762684.jpg",
+      "name": "Барби Феррейра",
+      "enName": "Barbie Ferreira",
+      "description": "Kat Hernandez",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 3878670,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_3878670.jpg",
+      "name": "Алекса Деми",
+      "enName": "Alexa Demie",
+      "description": "Maddy Perez",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 2752429,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2752429.jpg",
+      "name": "Элджи Смит",
+      "enName": "Algee Smith",
+      "description": "Chris McKay",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 1532045,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1532045.jpg",
+      "name": "Сидни Суини",
+      "enName": "Sydney Sweeney",
+      "description": "Cassie Howard",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 2974685,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2974685.jpg",
+      "name": "Мод Апатоу",
+      "enName": "Maude Apatow",
+      "description": "Lexi Howard",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 5195376,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_5195376.jpg",
+      "name": "Ангус Клауд",
+      "enName": "Angus Cloud",
+      "description": "Fezco",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 517854,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_517854.jpg",
+      "name": "Ника Кинг",
+      "enName": "Nika King",
+      "description": "Leslie Bennett",
+      "profession": "актеры",
+      "enProfession": "actor"
+    },
+    {
+      "id": 2817631,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2817631.jpg",
+      "name": null,
+      "enName": "Labrinth",
+      "description": null,
+      "profession": "композиторы",
+      "enProfession": "composer"
+    },
+    {
+      "id": 5680785,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_5680785.jpg",
+      "name": "Густав Радман",
+      "enName": "Gustave Rudman",
+      "description": null,
+      "profession": "композиторы",
+      "enProfession": "composer"
+    },
+    {
+      "id": 635923,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_635923.jpg",
+      "name": "Джейсон Болдуин Стюарт",
+      "enName": "Jason Baldwin Stewart",
+      "description": null,
+      "profession": "художники",
+      "enProfession": "designer"
+    },
+    {
+      "id": 2003071,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2003071.jpg",
+      "name": "Майкл Гресли",
+      "enName": "Michael Grasley",
+      "description": null,
+      "profession": "художники",
+      "enProfession": "designer"
+    },
+    {
+      "id": 2034206,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2034206.jpg",
+      "name": "Кэй Ли",
+      "enName": "Kay Lee",
+      "description": null,
+      "profession": "художники",
+      "enProfession": "designer"
+    },
+    {
+      "id": 2003829,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2003829.jpg",
+      "name": "Алисса Хилл",
+      "enName": "Alyssa Hill",
+      "description": null,
+      "profession": "художники",
+      "enProfession": "designer"
+    },
+    {
+      "id": 125,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_125.jpg",
+      "name": "Сэм Левинсон",
+      "enName": "Sam Levinson",
+      "description": null,
+      "profession": "режиссеры",
+      "enProfession": "director"
+    },
+    {
+      "id": 3687555,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_3687555.jpg",
+      "name": "Пиппа Бьянко",
+      "enName": "Pippa Bianco",
+      "description": null,
+      "profession": "режиссеры",
+      "enProfession": "director"
+    },
+    {
+      "id": 532293,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_532293.jpg",
+      "name": "Августин Фриззелл",
+      "enName": "Augustine Frizzell",
+      "description": null,
+      "profession": "режиссеры",
+      "enProfession": "director"
+    },
+    {
+      "id": 9983,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_9983.jpg",
+      "name": "Дженнифер Моррисон",
+      "enName": "Jennifer Morrison",
+      "description": null,
+      "profession": "режиссеры",
+      "enProfession": "director"
+    },
+    {
+      "id": 767728,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_767728.jpg",
+      "name": "Хулио Перез IV",
+      "enName": "Julio C. Perez IV",
+      "description": null,
+      "profession": "монтажеры",
+      "enProfession": "editor"
+    },
+    {
+      "id": 2058289,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2058289.jpg",
+      "name": "Лора Земпель",
+      "enName": "Laura Zempel",
+      "description": null,
+      "profession": "монтажеры",
+      "enProfession": "editor"
+    },
+    {
+      "id": 2521092,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_2521092.jpg",
+      "name": "Никола Боянов",
+      "enName": "Nikola Boyanov",
+      "description": null,
+      "profession": "монтажеры",
+      "enProfession": "editor"
+    },
+    {
+      "id": 1786948,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1786948.jpg",
+      "name": "Аарон И. Батлер",
+      "enName": "Aaron I. Butler",
+      "description": null,
+      "profession": "монтажеры",
+      "enProfession": "editor"
+    },
+    {
+      "id": 1598322,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1598322.jpg",
+      "name": "Марцель Рев",
+      "enName": "Marcell Rév",
+      "description": null,
+      "profession": "операторы",
+      "enProfession": "operator"
+    },
+    {
+      "id": 1874483,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1874483.jpg",
+      "name": "Дрю Дэниелс",
+      "enName": "Drew Daniels",
+      "description": null,
+      "profession": "операторы",
+      "enProfession": "operator"
+    },
+    {
+      "id": 1857157,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1857157.jpg",
+      "name": "Адам Ньюпорт-Берра",
+      "enName": "Adam Newport-Berra",
+      "description": null,
+      "profession": "операторы",
+      "enProfession": "operator"
+    },
+    {
+      "id": 1664642,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1664642.jpg",
+      "name": "Андре Шеметофф",
+      "enName": "André Chemetoff",
+      "description": null,
+      "profession": "операторы",
+      "enProfession": "operator"
+    },
+    {
+      "id": 4522131,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_4522131.jpg",
+      "name": "Харрисон Крайсс",
+      "enName": "Harrison Kreiss",
+      "description": null,
+      "profession": "продюсеры",
+      "enProfession": "producer"
+    },
+    {
+      "id": 125,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_125.jpg",
+      "name": "Сэм Левинсон",
+      "enName": "Sam Levinson",
+      "description": null,
+      "profession": "продюсеры",
+      "enProfession": "producer"
+    },
+    {
+      "id": 898772,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_898772.jpg",
+      "name": "Майкл Кэрролл",
+      "enName": "Michael Carroll",
+      "description": null,
+      "profession": "продюсеры",
+      "enProfession": "producer"
+    },
+    {
+      "id": 1114352,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1114352.jpg",
+      "name": "Дрейк",
+      "enName": "Drake",
+      "description": null,
+      "profession": "продюсеры",
+      "enProfession": "producer"
+    },
+    {
+      "id": 1095988,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_1095988.jpg",
+      "name": "Рон Лешем",
+      "enName": "Ron Leshem",
+      "description": null,
+      "profession": "редакторы",
+      "enProfession": "writer"
+    },
+    {
+      "id": 848761,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_848761.jpg",
+      "name": "Дафна Левин",
+      "enName": "Daphna Levin",
+      "description": null,
+      "profession": "редакторы",
+      "enProfession": "writer"
+    },
+    {
+      "id": 4994033,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_4994033.jpg",
+      "name": "Хантер Шафер",
+      "enName": "Hunter Schafer",
+      "description": null,
+      "profession": "редакторы",
+      "enProfession": "writer"
+    },
+    {
+      "id": 125,
+      "photo": "https://image.openmoviedb.com/kinopoisk-st-images//actor_iphone/iphone360_125.jpg",
+      "name": "Сэм Левинсон",
+      "enName": "Sam Levinson",
+      "description": null,
+      "profession": "редакторы",
+      "enProfession": "writer"
+    }
+  ],
+  "lists": [
+    "best_tvseries_2022_editorialchoice",
+    "hbo_best",
+    "100_greatest_TVseries",
+    "popular-series",
+    "bestofamediateka",
+    "hd"
+  ],
+  "typeNumber": 2,
+  "alternativeName": "Euphoria",
+  "enName": "Euphoria",
+  "names": [
+    {
+      "name": "Эйфория"
+    },
+    {
+      "name": "Euphoria"
+    },
+    {
+      "name": "Еуфория",
+      "language": "BG",
+      "type": null
+    },
+    {
+      "name": "亢奋",
+      "language": "CN",
+      "type": null
+    },
+    {
+      "name": "迷醉",
+      "language": "CN",
+      "type": null
+    },
+    {
+      "name": "ユーフォリア/EUPHORIA",
+      "language": "JP",
+      "type": null
+    },
+    {
+      "name": "ユーフォリア／EUPHORIA",
+      "language": "JP",
+      "type": null
+    },
+    {
+      "name": "유포리아",
+      "language": "KR",
+      "type": null
+    },
+    {
+      "name": "ยูโฟเรีย",
+      "language": "TH",
+      "type": null
+    },
+    {
+      "name": "高校十八禁",
+      "language": "TW",
+      "type": null
+    },
+    {
+      "name": "Euphoria U.S.",
+      "language": "US",
+      "type": null
+    },
+    {
+      "name": "Phê Pha",
+      "language": "VN",
+      "type": null
+    }
+  ],
+  "movieLength": null,
+  "ratingMpaa": null,
+  "shortDescription": "После рехаба бунтарка Ру заново привыкает к школьной жизни. Самая откровенная подростковая драма десятилетия",
+  "technology": {
+    "hasImax": false,
+    "has3D": false
+  },
+  "ticketsOnSale": false,
+  "updatedAt": "2024-04-10T01:00:19.430Z",
+  "fees": {
+    "world": {},
+    "russia": {},
+    "usa": {}
+  },
+  "similarMovies": [
+    {
+      "id": 1147693,
+      "name": "Сексуальное просвещение",
+      "enName": null,
+      "alternativeName": "Sex Education",
+      "type": "tv-series",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/56d2d0cd-78f8-48dc-8a82-e4e040d23a99/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/56d2d0cd-78f8-48dc-8a82-e4e040d23a99/x1000"
+      }
+    },
+    {
+      "id": 324657,
+      "name": "Молокососы",
+      "enName": null,
+      "alternativeName": "Skins",
+      "type": "tv-series",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/92a355ec-14fa-4b97-bd49-4b283a041a94/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/92a355ec-14fa-4b97-bd49-4b283a041a94/x1000"
+      }
+    },
+    {
+      "id": 582358,
+      "name": "13 причин почему",
+      "enName": null,
+      "alternativeName": "13 Reasons Why",
+      "type": "tv-series",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/3526e6b5-5888-4b8b-8ae0-e01d5c50a7cd/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/3526e6b5-5888-4b8b-8ae0-e01d5c50a7cd/x1000"
+      }
+    },
+    {
+      "id": 1002677,
+      "name": "Стыд",
+      "enName": null,
+      "alternativeName": "Skam",
+      "type": "tv-series",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/aacedfa9-aaf0-4e6a-bdd0-697cd5717c9c/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/aacedfa9-aaf0-4e6a-bdd0-697cd5717c9c/x1000"
+      }
+    },
+    {
+      "id": 6384,
+      "name": "Детки",
+      "enName": null,
+      "alternativeName": "Kids",
+      "type": "movie",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/f555c4a7-85ab-414a-9c95-dce56bf012e7/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/f555c4a7-85ab-414a-9c95-dce56bf012e7/x1000"
+      }
+    },
+    {
+      "id": 1117735,
+      "name": "Элита",
+      "enName": null,
+      "alternativeName": "Élite",
+      "type": "tv-series",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/7102bd61-cbcf-44cb-bdf0-feeb61b8dba8/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/7102bd61-cbcf-44cb-bdf0-feeb61b8dba8/x1000"
+      }
+    },
+    {
+      "id": 574678,
+      "name": "Молокососы",
+      "enName": null,
+      "alternativeName": "Skins",
+      "type": "tv-series",
+      "poster": {
+        "url": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/fac47971-f282-4ae7-8417-ccb5be36546d/orig",
+        "previewUrl": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/fac47971-f282-4ae7-8417-ccb5be36546d/x1000"
+      }
+    }
+  ],
+  "sequelsAndPrequels": [
+    {
+      "id": 1197750,
+      "name": "Эйфория",
+      "enName": "Euphoria",
+      "alternativeName": "Euphoria",
+      "type": "remake",
+      "poster": {
+        "url": "https://st.kp.yandex.net/images/film_big/1197750.jpg",
+        "previewUrl": "https://st.kp.yandex.net/images/film_iphone/iphone360_1197750.jpg"
+      }
+    }
+  ],
+  "imagesInfo": {
+    "framesCount": 75
+  },
+  "budget": {},
+  "ageRating": 18,
+  "logo": {
+    "url": "https://avatars.mds.yandex.net/get-ott/1534341/2a000001804cbfe633543e797dfac90fd5d1/orig"
+  },
+  "watchability": {
+    "items": [
+      {
+        "name": "Okko",
+        "logo": {
+          "url": "https://avatars.mds.yandex.net/get-ott/239697/7713e586-17d1-42d1-ac62-53e9ef1e70c3/orig"
+        },
+        "url": "https://okko.tv/serial/euphoria-123463?utm_medium=referral&utm_source=yandex_search&utm_campaign=new_search_feed"
+      },
+      {
+        "name": "Иви",
+        "logo": {
+          "url": "https://avatars.mds.yandex.net/get-ott/2419418/0dfd1724-848f-4725-9160-abc571f41c11/orig"
+        },
+        "url": "https://www.ivi.ru/watch/ejforiya?utm_source=yandex&utm_medium=wizard"
+      },
+      {
+        "name": "KION",
+        "logo": {
+          "url": "https://avatars.mds.yandex.net/get-ott/239697/daeb142e-3ecc-4bb2-9bff-4827996643ab/orig"
+        },
+        "url": "https://kion.ru/video/serial/123164434/season/123164347/episode/123164431?utm_source=yandex&utm_medium=organic&utm_campaign=wizard"
+      },
+      {
+        "name": "Триколор Кино и ТВ",
+        "logo": {
+          "url": "https://avatars.mds.yandex.net/get-ott/239697/947e777c-2f73-4cbc-b09d-6bfa3966ba13/orig"
+        },
+        "url": "https://kino.tricolor.tv/series/watch/eyforiya-2019/"
+      },
+      {
+        "name": "AMEDIATEKA",
+        "logo": {
+          "url": "https://avatars.mds.yandex.net/get-ott/1534341/f0885d1a-3f63-4869-9809-18c7519b1fad/orig"
+        },
+        "url": "https://amediateka.ru/watch/series_21501_ejforiya?utm_medium=referral&utm_source=yandex_search&utm_campaign=yandex_feed"
+      },
+      {
+        "name": "Кино1ТВ",
+        "logo": {
+          "url": "https://avatars.mds.yandex.net/get-ott/1672343/4e5f7a8e-d5ac-4904-9fc0-208753ccf520/orig"
+        },
+        "url": "https://kino.1tv.ru/serials/eyforiya?utm_source=yandex&utm_medium=wizard"
+      },
+      {
+        "name": "Смотрёшка",
+        "logo": {
+          "url": "https://avatars.mds.yandex.net/get-ott/236744/c88e652e-2eb1-472d-b636-a266364dbf58/orig"
+        },
+        "url": "https://smotreshka.tv/vod/amedia/62307a88686730755e665699?utm_source=yandex_search&utm_campaign=yandex_feed&utm_term=amediateka&utm_content=Amediateka"
+      },
+      {
+        "name": "НТВ-ПЛЮС Онлайн ТВ",
+        "logo": {
+          "url": "https://avatars.mds.yandex.net/get-ott/223007/c6b9b3d8-3258-4394-9cae-c86fdb56a0c6/orig"
+        },
+        "url": "https://ntvplus.tv/watch/11571-ejforiya?utm_source=kinopoisk"
+      },
+      {
+        "name": "24ТВ",
+        "logo": {
+          "url": "https://avatars.mds.yandex.net/get-ott/2439731/85e83b8d-1159-4781-bad5-ce0a809b3843/orig"
+        },
+        "url": "https://24h.tv/contents/2019-euphoria-546314465063207884"
+      },
+      {
+        "name": "Kinopoisk HD",
+        "logo": {
+          "url": "https://yastatic.net/s3/kinopoisk-frontend/hd-www/release/apple-touch-icon-180x180.png"
+        },
+        "url": "https://hd.kinopoisk.ru/?rt=47a255c711dfe90bb55020e8d6575e44"
+      }
+    ]
+  },
+  "releaseYears": [
+    {
+      "start": 2019,
+      "end": null
+    }
+  ],
+  "top10": null,
+  "top250": null,
+  "isSeries": true,
+  "seriesLength": 55,
+  "totalSeriesLength": null,
+  "deletedAt": null,
+  "networks": {
+    "items": [
+      {
+        "name": "HBO"
+      }
+    ]
+  },
+  "videos": {
+    "trailers": [
+      {
+        "url": "https://www.youtube.com/embed/gCs7bc1o73M",
+        "name": "Трейлер №1. Сезон 1",
+        "site": "youtube",
+        "type": "TRAILER"
+      },
+      {
+        "url": "https://www.youtube.com/embed/gCs7bc1o73M",
+        "name": "Трейлер №1. Сезон 1",
+        "site": "youtube",
+        "type": "TRAILER"
+      },
+      {
+        "url": "https://www.youtube.com/embed/UR4Pxgnm-GA",
+        "name": "Season 1 Trailer",
+        "site": "youtube",
+        "type": "TRAILER"
+      }
+    ]
+  }
+}

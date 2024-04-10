@@ -11,14 +11,12 @@ function Reviews({ reviews, pages, movieId }) {
   const [currentPage, setCurrentPage] = React.useState(1);
 
   const cleanHTML = (html) => {
+    html = html.replace(/(?:\r\n|\r|\n)/g, '<br />');
     return sanitizeHtml(html, {
       allowedTags: ['b', 'i', 'em', 'strong', 'p', 'br'], // Разрешенные теги
       allowedAttributes: {}, // Разрешенные атрибуты
     });
   };
-
-  console.log(reviews);
-  console.log(reviewsData);
 
   React.useEffect(() => {
     const fetchData = async () => {

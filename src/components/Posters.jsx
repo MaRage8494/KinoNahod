@@ -3,7 +3,7 @@ import React from 'react';
 
 function Posters({ posters }) {
   console.log(posters);
-  if (!posters || !Array.isArray(posters.docs)) {
+  if (!posters || !Array.isArray(posters.docs) || posters.docs.length === 0) {
     return <h2 className="stub">Нет информации о постерах</h2>;
   }
   return (

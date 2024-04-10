@@ -1,7 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import sortReducer from './slices/sortSlice.js';
 import pagesReducer from './slices/pagesSlice.js';
+import moviesReducer from './slices/moviesSlice.js';
+import searchReducer from './slices/searchSlice.js';
 
 export const store = configureStore({
-  reducer: { sortReducer, pagesReducer },
+  reducer: { sortReducer, pagesReducer, moviesReducer, searchReducer },
 });

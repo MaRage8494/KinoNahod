@@ -4,6 +4,7 @@ import './scss/app.scss';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Movie from './pages/Movie';
+import React from 'react';
 
 export default function App() {
   return (

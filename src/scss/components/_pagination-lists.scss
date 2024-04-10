@@ -1,4 +1,16 @@
 @import '../variables';
+.series {
+  &__title {
+    font-size: 32px;
+    margin: 30px 0px;
+  }
+  &__content {
+    display: flex;
+    &__item {
+      margin-right: 40px;
+    }
+  }
+}
 .actors {
   &__title {
     font-size: 35px;

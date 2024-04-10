@@ -12,7 +12,11 @@ function MovieInfo({ poster, name, rating, description }) {
       {poster === '' ? (
         <h2 className="stub">Нет информации о постере</h2>
       ) : (
-        <img className="info-poster" src={poster} alt={name} />
+        <img
+          className="info-poster"
+          src={poster || 'https://st.kp.yandex.net/images/no-poster.gif'}
+          alt={name}
+        />
       )}
       <div className="description">
         <div className="info">

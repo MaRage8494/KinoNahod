@@ -16,7 +16,11 @@ export default function MovieBlock({ id, title, year, imageUrl, genre, rating })
         {rating % 1 === 0 ? `${rating}.0` : rating}
       </div>
       <Link to={`/movie/${id}`}>
-        <img className="movie-block__image" src={imageUrl.previewUrl} alt="Movie" />
+        <img
+          className="movie-block__image"
+          src={imageUrl?.previewUrl || 'https://st.kp.yandex.net/images/no-poster.gif'}
+          alt="Movie"
+        />
         <h4 className="movie-block__title">{title}</h4>
       </Link>
       <div className="movie-block__bottom">

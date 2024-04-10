@@ -4,6 +4,45 @@
   border-bottom: 1px solid $gray-line;
   padding: 40px 0;
 
+  &__search {
+    position: relative;
+    left: -120px;
+    &__input {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 8px 20px;
+      padding-left: 42px;
+      width: 400px;
+      border-radius: 10px;
+      font-size: 16px;
+
+      &:focus {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+    }
+    &__logo {
+      height: 22px;
+      width: 22px;
+      opacity: 0.3;
+      position: absolute;
+      left: 12px;
+      top: 10px;
+    }
+
+    &__close {
+      height: 18px;
+      width: 18px;
+      opacity: 0.3;
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
   .container {
     display: flex;
     align-items: center;

@@ -1,49 +1,43 @@
 import React from 'react';
-import axios from '../conf/axios.js';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-import MovieInfo from '../components/MovieInfo.jsx';
+import MovieInfo from '../components/MovieInfo/index.jsx';
+import SceletonMovieInfo from '../components/MovieInfo/SceletonMovieInfo.jsx';
 import SimilarMovies from '../components/SimilarMovies.jsx';
 import Posters from '../components/Posters.jsx';
 import Actors from '../components/Actors.jsx';
-import Reviews from '../components/Reviews.jsx';
+import Reviews from '../components/Reviews/index.jsx';
 
 // import euphoria from './euphoria.json';
 import Series from '../components/Series.jsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMovieInfo } from '../redux/slices/movieInfoSlice.js';
+import TryAgain from '../components/TryAgain.jsx';
 
 function Movie() {
   const { id } = useParams();
-  const [movieData, setMovieData] = React.useState([]);
-  const [posters, setPosters] = React.useState([]);
-  const [reviews, setReviews] = React.useState([]);
-  const [isLoading, setLoading] = React.useState(true);
+
+  const { movieData, postersData, reviewsData, status, attempts } = useSelector(
+    (state) => state.movieInfoReducer,
+  );
+  const dispatch = useDispatch();
+
+  const fetchMovieInfoData = React.useCallback(async () => {
+    try {
+      dispatch(fetchMovieInfo({ id }));
+      window.scrollTo(0, 0);
+    } catch (err) {
+      console.error('Ошибка при получении фильмов:', err);
+    }
+  }, [dispatch, id]);
 
   React.useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const movieResponse = await axios.get(`/movie/${id}`);
-        setMovieData(movieResponse.data);
+    fetchMovieInfoData();
+  }, [fetchMovieInfoData]);
 
-        const postersResponse = await axios.get(
-          `/image?page=1&limit=10&selectFields=previewUrl&movieId=${id}`,
-        );
-        setPosters(postersResponse.data);
-
-        const reviewsResponse = await axios.get(`review?page=1&limit=5&movieId=${id}`);
-        setReviews(reviewsResponse.data);
-        window.scrollTo(0, 0);
-      } catch (error) {
-        console.error('Ошибка при получении данных:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [id]);
-  console.log(movieData);
+  console.log(movieData, postersData, reviewsData, status);
+  console.log('reviews', reviewsData);
 
   // console.log(euphoria);
   // React.useEffect(() => {
@@ -53,8 +47,10 @@ function Movie() {
 
   return (
     <>
-      {isLoading ? (
-        <h1>Загрузка...</h1>
+      {status === 'loading' ? (
+        <SceletonMovieInfo />
+      ) : status === 'error' ? (
+        <TryAgain attempts={attempts} action={fetchMovieInfoData} />
       ) : (
         <>
           <Link to="/" className="button button--back">
@@ -79,7 +75,7 @@ function Movie() {
           <div className="carousels">
             <div className="posters">
               <h1 className="carousel__title">Постеры</h1>
-              <Posters posters={posters} />
+              <Posters posters={postersData} />
             </div>
             <div className="similar">
               <h1 className="carousel__title">Похожие фильмы</h1>
@@ -87,7 +83,7 @@ function Movie() {
             </div>
           </div>
           <h2 className="reviews__title">Отзывы пользователей</h2>
-          <Reviews reviews={reviews} pages={reviews.pages} movieId={id} />
+          <Reviews reviews={reviewsData} pages={reviewsData.pages} movieId={id} />
         </>
       )}
     </>

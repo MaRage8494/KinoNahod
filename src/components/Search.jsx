@@ -1,8 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import debounce from 'lodash.debounce';
+
 import { setSearchValue } from '../redux/slices/searchSlice';
 
 export const Search = () => {
+  const [value, setValue] = React.useState('');
   const searchValue = useSelector((state) => state.searchReducer.searchValue);
   const dispatch = useDispatch();
   const inputRef = React.useRef();
@@ -10,6 +13,19 @@ export const Search = () => {
   const onClickClear = () => {
     dispatch(setSearchValue(''));
     inputRef.current.focus();
+  };
+
+  const updateSearchValue = React.useMemo(
+    () =>
+      debounce((str) => {
+        dispatch(setSearchValue(str));
+      }, 1000),
+    [dispatch],
+  );
+
+  const onChangeInput = (event) => {
+    setValue(event.target.value);
+    updateSearchValue(event.target.value);
   };
 
   console.log(searchValue);
@@ -31,12 +47,12 @@ export const Search = () => {
       </svg>
       <input
         ref={inputRef}
-        value={searchValue}
-        onChange={(event) => dispatch(setSearchValue(event.target.value))}
+        value={value}
+        onChange={(event) => onChangeInput(event)}
         className="header__search__input"
         placeholder="Поиск фильма/сериала..."
       />
-      {searchValue && (
+      {value && (
         <svg
           onClick={onClickClear}
           className="header__search__close"

@@ -12,6 +12,7 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
     if (pages <= 5) {
       items.push(
         <Pagination.Prev
+          key="prev"
           onClick={() => {
             setCurrentPage(currentPage <= 2 ? 1 : currentPage - 1);
             setActive(currentPage <= 2 ? 1 : currentPage - 1);
@@ -33,6 +34,7 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
       }
       items.push(
         <Pagination.Next
+          key="next"
           onClick={() => {
             setCurrentPage(currentPage === pages ? pages : currentPage + 1);
             setActive(currentPage === pages ? pages : currentPage + 1);
@@ -42,12 +44,14 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
     } else {
       items.push(
         <Pagination.First
+          key="first"
           onClick={() => {
             setCurrentPage(1);
             setActive(1);
           }}
         />,
         <Pagination.Prev
+          key="prev"
           onClick={() => {
             setCurrentPage(currentPage <= 2 ? 1 : currentPage - 1);
             setActive(currentPage <= 2 ? 1 : currentPage - 1);
@@ -89,12 +93,14 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
             {pages}
           </Pagination.Item>,
           <Pagination.Next
+            key="next"
             onClick={() => {
               setCurrentPage(currentPage === pages ? pages : currentPage + 1);
               setActive(currentPage === pages ? pages : currentPage + 1);
             }}
           />,
           <Pagination.Last
+            key="last"
             onClick={() => {
               setCurrentPage(pages);
               setActive(pages);
@@ -118,12 +124,14 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
         }
         items.push(
           <Pagination.Next
+            key="next"
             onClick={() => {
               setCurrentPage(currentPage === pages ? pages : currentPage + 1);
               setActive(currentPage === pages ? pages : currentPage + 1);
             }}
           />,
           <Pagination.Last
+            key="last"
             onClick={() => {
               setCurrentPage(pages);
               setActive(pages);
@@ -159,12 +167,14 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
         );
         items.push(
           <Pagination.Next
+            key="next"
             onClick={() => {
               setCurrentPage(currentPage === pages ? pages : currentPage + 1);
               setActive(currentPage === pages ? pages : currentPage + 1);
             }}
           />,
           <Pagination.Last
+            key="last"
             onClick={() => {
               setCurrentPage(pages);
               setActive(pages);

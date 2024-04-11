@@ -33,6 +33,7 @@ export const fetchMovies = createAsyncThunk(
 const initialState = {
   items: [],
   status: 'loading',
+  attempts: 0,
 };
 
 const moviesSlice = createSlice({
@@ -41,6 +42,9 @@ const moviesSlice = createSlice({
   reducers: {
     setItems: (state, action) => {
       state.items = action.payload;
+    },
+    incrementAttempt: (state) => {
+      state.attempts += 1;
     },
   },
   extraReducers: (builder) => {
@@ -60,6 +64,6 @@ const moviesSlice = createSlice({
   },
 });
 
-export const { setItems } = moviesSlice.actions;
+export const { setItems, incrementAttempt } = moviesSlice.actions;
 
 export default moviesSlice.reducer;

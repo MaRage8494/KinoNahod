@@ -1,14 +1,17 @@
 import { ListGroup } from 'react-bootstrap';
 import React from 'react';
-import axios from '../conf/axios.js';
+import axios from '../../conf/axios.js';
 import sanitizeHtml from 'sanitize-html';
 
-import Pagination from './MyPagination.jsx';
+import Pagination from '../MyPagination.jsx';
+import SceletonReviews from './SceletonReviews.jsx';
 
 function Reviews({ reviews, pages, movieId }) {
   const [reviewsData, setReviews] = React.useState(reviews);
   const [isLoading, setLoading] = React.useState(true);
   const [currentPage, setCurrentPage] = React.useState(1);
+
+  const titleRef = React.useRef();
 
   const cleanHTML = (html) => {
     html = html.replace(/(?:\r\n|\r|\n)/g, '<br />');
@@ -34,6 +37,7 @@ function Reviews({ reviews, pages, movieId }) {
     };
 
     fetchData();
+    titleRef?.current?.scrollIntoView();
   }, [currentPage, movieId]);
 
   console.log(reviews);
@@ -52,9 +56,9 @@ function Reviews({ reviews, pages, movieId }) {
   return (
     <>
       {isLoading ? (
-        <h2>Загрузка...</h2>
+        <SceletonReviews />
       ) : (
-        <div className="reviews">
+        <div ref={titleRef} className="reviews">
           {!reviewsData ? (
             <h2>Нет информации об отзывах</h2>
           ) : (

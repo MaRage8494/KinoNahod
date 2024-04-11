@@ -43,7 +43,7 @@ const moviesSlice = createSlice({
     setItems: (state, action) => {
       state.items = action.payload;
     },
-    incrementAttempt: (state) => {
+    incrementHomeAttempt: (state) => {
       state.attempts += 1;
     },
   },
@@ -56,6 +56,7 @@ const moviesSlice = createSlice({
       .addCase(fetchMovies.fulfilled, (state, action) => {
         state.items = action.payload;
         state.status = 'success';
+        state.attempts = 0;
       })
       .addCase(fetchMovies.rejected, (state) => {
         state.status = 'error';
@@ -64,6 +65,6 @@ const moviesSlice = createSlice({
   },
 });
 
-export const { setItems, incrementAttempt } = moviesSlice.actions;
+export const { setItems, incrementHomeAttempt } = moviesSlice.actions;
 
 export default moviesSlice.reducer;

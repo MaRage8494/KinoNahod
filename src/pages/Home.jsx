@@ -9,6 +9,7 @@ import MyPagination from '../components/MyPagination.jsx';
 import { setMoviePage, setMoviesPerPage } from '../redux/slices/pagesSlice.js';
 import { fetchMovies } from '../redux/slices/moviesSlice.js';
 import TryAgain from '../components/TryAgain.jsx';
+import { incrementHomeAttempt } from '../redux/slices/moviesSlice';
 
 function Home() {
   const { items: movies, status, attempts } = useSelector((state) => state.moviesReducer);
@@ -63,7 +64,13 @@ function Home() {
         {status === 'loading' ? (
           [...new Array(10)].map((_, id) => <SceletonMovie key={id} />)
         ) : status === 'error' ? (
-          <TryAgain action={fetchMoviesData} attempts={attempts} />
+          <TryAgain
+            action={fetchMoviesData}
+            attempts={attempts}
+            incrementFunction={() => dispatch(incrementHomeAttempt())}
+          />
+        ) : status === 'success' && movies.docs.length === 0 ? (
+          <h3>Ничего не найдено</h3>
         ) : (
           movies.docs.map((movie) => (
             <MovieBlock

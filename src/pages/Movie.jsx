@@ -14,6 +14,7 @@ import Series from '../components/Series.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovieInfo } from '../redux/slices/movieInfoSlice.js';
 import TryAgain from '../components/TryAgain.jsx';
+import { incrementInfoAttempt } from '../redux/slices/movieInfoSlice';
 
 function Movie() {
   const { id } = useParams();
@@ -50,7 +51,11 @@ function Movie() {
       {status === 'loading' ? (
         <SceletonMovieInfo />
       ) : status === 'error' ? (
-        <TryAgain attempts={attempts} action={fetchMovieInfoData} />
+        <TryAgain
+          attempts={attempts}
+          action={fetchMovieInfoData}
+          incrementFunction={() => dispatch(incrementInfoAttempt())}
+        />
       ) : (
         <>
           <Link to="/" className="button button--back">

@@ -32,7 +32,7 @@ const movieInfoSlice = createSlice({
     setReviewsData: (state, action) => {
       state.reviewsData = action.payload;
     },
-    incrementAttempt: (state) => {
+    incrementInfoAttempt: (state) => {
       state.attempts += 1;
     },
   },
@@ -59,7 +59,7 @@ const movieInfoSlice = createSlice({
   },
 });
 
-export const { setMovieData, setPostersData, setReviewsData, incrementAttempt } =
+export const { setMovieData, setPostersData, setReviewsData, incrementInfoAttempt } =
   movieInfoSlice.actions;
 
 export default movieInfoSlice.reducer;

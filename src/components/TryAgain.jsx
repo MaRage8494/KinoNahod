@@ -1,14 +1,7 @@
-import { useDispatch } from 'react-redux';
-
-import { incrementAttempt } from '../redux/slices/movieInfoSlice';
-
-function TryAgain({ action, attempts }) {
-  const dispatch = useDispatch();
-  console.log(attempts);
-
+function TryAgain({ action, attempts, incrementFunction }) {
   const refreshHandler = (action) => {
     action();
-    dispatch(incrementAttempt());
+    incrementFunction();
   };
 
   return (

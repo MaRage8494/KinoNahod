@@ -5,6 +5,12 @@ import { setSearchValue } from '../redux/slices/searchSlice';
 export const Search = () => {
   const searchValue = useSelector((state) => state.searchReducer.searchValue);
   const dispatch = useDispatch();
+  const inputRef = React.useRef();
+
+  const onClickClear = () => {
+    dispatch(setSearchValue(''));
+    inputRef.current.focus();
+  };
 
   console.log(searchValue);
   return (
@@ -24,6 +30,7 @@ export const Search = () => {
         />
       </svg>
       <input
+        ref={inputRef}
         value={searchValue}
         onChange={(event) => dispatch(setSearchValue(event.target.value))}
         className="header__search__input"
@@ -31,7 +38,7 @@ export const Search = () => {
       />
       {searchValue && (
         <svg
-          onClick={() => dispatch(setSearchValue(''))}
+          onClick={onClickClear}
           className="header__search__close"
           height="512px"
           version="1.1"

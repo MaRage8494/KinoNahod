@@ -3,11 +3,11 @@ import axios from '../../conf/axios.js';
 
 export const fetchMovies = createAsyncThunk(
   'movies/fetchMovies',
-  async ({ moviePage, sortField, sortType, searchValue }) => {
+  async ({ moviePage, sortField, sortType, searchValue, moviesPerPage }) => {
     if (searchValue) {
       const { data } = await axios.get(`/movie/search?`, {
         params: {
-          limit: 10,
+          limit: moviesPerPage,
           page: moviePage,
           query: searchValue,
         },
@@ -17,7 +17,7 @@ export const fetchMovies = createAsyncThunk(
     } else {
       const { data } = await axios.get(`/movie?lists=top250`, {
         params: {
-          limit: 10,
+          limit: moviesPerPage,
           page: moviePage,
           sortField: sortField,
           sortType: sortType,

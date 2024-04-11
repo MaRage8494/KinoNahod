@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from '../conf/axios.js';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import MovieInfo from '../components/MovieInfo.jsx';
 import SimilarMovies from '../components/SimilarMovies.jsx';
@@ -32,6 +33,7 @@ function Movie() {
 
         const reviewsResponse = await axios.get(`review?page=1&limit=5&movieId=${id}`);
         setReviews(reviewsResponse.data);
+        window.scrollTo(0, 0);
       } catch (error) {
         console.error('Ошибка при получении данных:', error);
       } finally {
@@ -55,6 +57,9 @@ function Movie() {
         <h1>Загрузка...</h1>
       ) : (
         <>
+          <Link to="/" className="button button--back">
+            <span>Назад</span>
+          </Link>
           <MovieInfo
             poster={movieData.poster.url}
             name={movieData.name}

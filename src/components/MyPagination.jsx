@@ -2,8 +2,9 @@ import React from 'react';
 import { Pagination } from 'react-bootstrap';
 
 function MyPagination({ pages, currentPage, setCurrentPage }) {
-  const [active, setActive] = React.useState(1);
+  const [active, setActive] = React.useState(currentPage);
   console.log(pages);
+  console.log(currentPage);
 
   const renderPaginationItems = () => {
     const items = [];

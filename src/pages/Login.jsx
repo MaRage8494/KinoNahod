@@ -3,12 +3,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setToken } from '../redux/slices/loginSlice';
 
 function Login() {
   const navigate = useNavigate();
-  const { token } = useSelector((state) => state.loginReducer);
   const dispatch = useDispatch();
   const [loginError, setLoginError] = React.useState(false);
   const user = { email: 'marat2003@mail.ru', password: 'bebra2003' };

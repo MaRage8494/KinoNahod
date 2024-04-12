@@ -4,7 +4,7 @@ import axios from '../../conf/axios.js';
 export const fetchMovies = createAsyncThunk(
   'movies/fetchMovies',
   async ({ moviePage, sortField, sortType, searchValue, moviesPerPage }) => {
-    if (searchValue) {
+    if (searchValue !== '') {
       const { data } = await axios.get(`/movie/search?`, {
         params: {
           limit: moviesPerPage,

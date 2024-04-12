@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Pagination } from 'react-bootstrap';
 
 function MyPagination({ pages, currentPage, setCurrentPage }) {
-  const [active, setActive] = React.useState(currentPage);
   console.log(pages);
   console.log(currentPage);
+
+  const prevPageRef = React.useRef(currentPage);
+
+  const handlePageChange = React.useCallback(
+    (page) => {
+      if (page !== currentPage) {
+        setCurrentPage(page);
+      }
+    },
+    [currentPage, setCurrentPage],
+  );
 
   const renderPaginationItems = () => {
     const items = [];
@@ -14,8 +24,7 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
         <Pagination.Prev
           key="prev"
           onClick={() => {
-            setCurrentPage(currentPage <= 2 ? 1 : currentPage - 1);
-            setActive(currentPage <= 2 ? 1 : currentPage - 1);
+            handlePageChange(currentPage <= 2 ? 1 : currentPage - 1);
           }}
         />,
       );
@@ -23,10 +32,9 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
         items.push(
           <Pagination.Item
             key={i}
-            active={i === active}
+            active={i === currentPage}
             onClick={() => {
-              setCurrentPage(i);
-              setActive(i);
+              handlePageChange(i);
             }}>
             {i}
           </Pagination.Item>,
@@ -36,8 +44,7 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
         <Pagination.Next
           key="next"
           onClick={() => {
-            setCurrentPage(currentPage === pages ? pages : currentPage + 1);
-            setActive(currentPage === pages ? pages : currentPage + 1);
+            handlePageChange(currentPage === pages ? pages : currentPage + 1);
           }}
         />,
       );
@@ -46,36 +53,32 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
         <Pagination.First
           key="first"
           onClick={() => {
-            setCurrentPage(1);
-            setActive(1);
+            handlePageChange(1);
           }}
         />,
         <Pagination.Prev
           key="prev"
           onClick={() => {
-            setCurrentPage(currentPage <= 2 ? 1 : currentPage - 1);
-            setActive(currentPage <= 2 ? 1 : currentPage - 1);
+            handlePageChange(currentPage <= 2 ? 1 : currentPage - 1);
           }}
         />,
         <Pagination.Item
           key={1}
-          active={1 === active}
+          active={1 === currentPage}
           onClick={() => {
-            setCurrentPage(1);
-            setActive(1);
+            handlePageChange(1);
           }}>
           {1}
         </Pagination.Item>,
       );
-      if (active <= 3) {
+      if (currentPage <= 3) {
         for (let i = 2; i <= 4; i++) {
           items.push(
             <Pagination.Item
               key={i}
-              active={i === active}
+              active={i === currentPage}
               onClick={() => {
-                setCurrentPage(i);
-                setActive(i);
+                handlePageChange(i);
               }}>
               {i}
             </Pagination.Item>,
@@ -85,25 +88,22 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
         items.push(
           <Pagination.Item
             key={pages}
-            active={pages === active}
+            active={pages === currentPage}
             onClick={() => {
-              setCurrentPage(pages);
-              setActive(pages);
+              handlePageChange(pages);
             }}>
             {pages}
           </Pagination.Item>,
           <Pagination.Next
             key="next"
             onClick={() => {
-              setCurrentPage(currentPage === pages ? pages : currentPage + 1);
-              setActive(currentPage === pages ? pages : currentPage + 1);
+              handlePageChange(currentPage === pages ? pages : currentPage + 1);
             }}
           />,
           <Pagination.Last
             key="last"
             onClick={() => {
-              setCurrentPage(pages);
-              setActive(pages);
+              handlePageChange(pages);
             }}
           />,
         );
@@ -113,10 +113,9 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
           items.push(
             <Pagination.Item
               key={i}
-              active={i === active}
+              active={i === currentPage}
               onClick={() => {
-                setCurrentPage(i);
-                setActive(i);
+                handlePageChange(i);
               }}>
               {i}
             </Pagination.Item>,
@@ -126,15 +125,13 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
           <Pagination.Next
             key="next"
             onClick={() => {
-              setCurrentPage(currentPage === pages ? pages : currentPage + 1);
-              setActive(currentPage === pages ? pages : currentPage + 1);
+              handlePageChange(currentPage === pages ? pages : currentPage + 1);
             }}
           />,
           <Pagination.Last
             key="last"
             onClick={() => {
-              setCurrentPage(pages);
-              setActive(pages);
+              handlePageChange(pages);
             }}
           />,
         );
@@ -144,10 +141,9 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
           items.push(
             <Pagination.Item
               key={i}
-              active={i === active}
+              active={i === currentPage}
               onClick={() => {
-                setCurrentPage(i);
-                setActive(i);
+                handlePageChange(i);
               }}>
               {i}
             </Pagination.Item>,
@@ -157,10 +153,9 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
         items.push(
           <Pagination.Item
             key={pages}
-            active={pages === active}
+            active={pages === currentPage}
             onClick={() => {
-              setCurrentPage(pages);
-              setActive(pages);
+              handlePageChange(pages);
             }}>
             {pages}
           </Pagination.Item>,
@@ -169,15 +164,13 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
           <Pagination.Next
             key="next"
             onClick={() => {
-              setCurrentPage(currentPage === pages ? pages : currentPage + 1);
-              setActive(currentPage === pages ? pages : currentPage + 1);
+              handlePageChange(currentPage === pages ? pages : currentPage + 1);
             }}
           />,
           <Pagination.Last
             key="last"
             onClick={() => {
-              setCurrentPage(pages);
-              setActive(pages);
+              handlePageChange(pages);
             }}
           />,
         );
@@ -186,7 +179,9 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
 
     return items;
   };
-
+  useEffect(() => {
+    prevPageRef.current = currentPage;
+  }, [currentPage]);
   return <>{pages > 1 ? <Pagination>{renderPaginationItems()}</Pagination> : ''}</>;
 }
 

@@ -1,21 +1,35 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import qs from 'qs';
 
 import SceletonMovie from '../components/MovieBlock/SceletonMovie.jsx';
 import MovieBlock from '../components/MovieBlock/index.jsx';
 import Sort from '../components/Sort.jsx';
-import { useSelector, useDispatch } from 'react-redux';
-import { setSortField, setSortType } from '../redux/slices/sortSlice.js';
+import {
+  setSortField,
+  setSortType,
+  setMoviePage,
+  setMoviesPerPage,
+  setFilters,
+} from '../redux/slices/sortSlice.js';
 import MyPagination from '../components/MyPagination.jsx';
-import { setMoviePage, setMoviesPerPage } from '../redux/slices/pagesSlice.js';
+import { sortList } from '../components/Sort.jsx';
+
 import { fetchMovies } from '../redux/slices/moviesSlice.js';
+
 import TryAgain from '../components/TryAgain.jsx';
 import { incrementHomeAttempt } from '../redux/slices/moviesSlice';
 
 function Home() {
+  const navigate = useNavigate();
+  const isSearch = React.useRef(false);
+  const isMounted = React.useRef(false);
+
   const { items: movies, status, attempts } = useSelector((state) => state.moviesReducer);
-  const { sortField, sortType } = useSelector((state) => state.sortReducer);
-  const { moviePage, moviesPerPage } = useSelector((state) => state.pagesReducer);
-  const { searchValue } = useSelector((state) => state.searchReducer);
+  const { sortField, sortType, moviePage, moviesPerPage, searchValue } = useSelector(
+    (state) => state.sortReducer,
+  );
 
   console.log('attempt', attempts);
   console.log('status', status);
@@ -26,6 +40,7 @@ function Home() {
 
   const fetchMoviesData = React.useCallback(async () => {
     try {
+      console.log(sortField, sortType, moviePage, moviesPerPage, searchValue);
       dispatch(
         fetchMovies({
           moviePage,
@@ -42,8 +57,40 @@ function Home() {
   }, [dispatch, moviePage, sortField, sortType, searchValue, moviesPerPage]);
 
   React.useEffect(() => {
-    fetchMoviesData();
-  }, [fetchMoviesData]);
+    if (window.location.search) {
+      const params = qs.parse(window.location.search.substring(1));
+
+      console.log('sortField', params.sortField);
+      const sort = sortList.find((obj) => obj.sortProperty === params.sortField);
+
+      console.log('sort', sort);
+      dispatch(setFilters({ ...params, sortField: sort }));
+      isSearch.current = true;
+    }
+  }, [dispatch]);
+
+  React.useEffect(() => {
+    if (!isSearch.current) {
+      fetchMoviesData();
+    }
+
+    isSearch.current = false;
+  }, [fetchMoviesData, isSearch]);
+
+  React.useEffect(() => {
+    if (isMounted.current) {
+      const queryString = qs.stringify({
+        moviePage,
+        sortType,
+        searchValue,
+        moviesPerPage,
+        sortField: sortField.sortProperty,
+      });
+
+      navigate(`?${queryString}`);
+    }
+    isMounted.current = true;
+  }, [dispatch, moviePage, sortType, sortField, searchValue, moviesPerPage, navigate]);
 
   return (
     <>

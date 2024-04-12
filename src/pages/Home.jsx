@@ -51,14 +51,14 @@ function Home() {
           moviesPerPage,
         }),
       );
-      console.log(localStorage.getItem('searhHistory'));
+      console.log(window.localStorage.getItem('searhHistory'));
       window.scrollTo(0, 0);
     } catch (err) {
       console.error('Ошибка при получении фильмов:', err);
     } finally {
-      console.log('localStorage', localStorage.getItem('searchHistory'));
-      if (localStorage.getItem('searchHistory')) {
-        dispatch(setSearchHistory(localStorage.getItem('searchHistory').split(',')));
+      console.log('localStorage', window.localStorage.getItem('searchHistory'));
+      if (window.localStorage.getItem('searchHistory')) {
+        dispatch(setSearchHistory(window.localStorage.getItem('searchHistory').split(',')));
       }
     }
   }, [dispatch, moviePage, sortField, sortType, searchValue, moviesPerPage]);

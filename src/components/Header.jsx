@@ -4,17 +4,25 @@ import React from 'react';
 import logoSvg from '../assets/img/camera-logo.svg';
 
 import Search from './Search';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setToken } from '../redux/slices/loginSlice';
 import { setFilters } from '../redux/slices/sortSlice';
 
 export default function Header() {
   let location = useLocation();
 
+  const { token } = useSelector((state) => state.loginReducer);
   const dispatch = useDispatch();
   const [path, setPath] = React.useState(location.pathname);
   React.useEffect(() => {
     setPath(location.pathname);
-  }, [location.pathname]);
+    dispatch(setToken(window.localStorage.getItem('token')));
+  }, [location.pathname, dispatch]);
+
+  const logoutHandler = () => {
+    window.localStorage.removeItem('token');
+    dispatch(setToken(''));
+  };
 
   const handleLogoClick = () => {
     if (location.search !== '') {
@@ -43,11 +51,22 @@ export default function Header() {
         </Link>
 
         {path === '/' ? <Search /> : ''}
-        <div className="header__login">
-          <a href="/login.html" className="button button--login">
-            <span>Войти</span>
-          </a>
-        </div>
+        {token ? (
+          <div className="header__login">
+            <Link to="/random" className="button button--random">
+              <span>Рандомный фильм</span>
+            </Link>
+            <div onClick={() => logoutHandler()} className="button button--logout">
+              <span>Выйти</span>
+            </div>
+          </div>
+        ) : (
+          <div className="header__login">
+            <Link to="/login" className="button button--login">
+              <span>Войти</span>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

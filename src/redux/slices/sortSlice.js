@@ -38,7 +38,7 @@ export const sortSlice = createSlice({
       } else {
         state.searchHistory.unshift(action.payload);
       }
-      localStorage.setItem('searchHistory', state.searchHistory);
+      window.localStorage.setItem('searchHistory', state.searchHistory);
     },
     setSearchHistory: (state, action) => {
       state.searchHistory = action.payload;

@@ -12,6 +12,7 @@ import {
   setMoviePage,
   setMoviesPerPage,
   setFilters,
+  setSearchHistory,
 } from '../redux/slices/sortSlice.js';
 import MyPagination from '../components/MyPagination.jsx';
 import { sortList } from '../components/Sort.jsx';
@@ -50,9 +51,15 @@ function Home() {
           moviesPerPage,
         }),
       );
+      console.log(localStorage.getItem('searhHistory'));
       window.scrollTo(0, 0);
     } catch (err) {
       console.error('Ошибка при получении фильмов:', err);
+    } finally {
+      console.log('localStorage', localStorage.getItem('searchHistory'));
+      if (localStorage.getItem('searchHistory')) {
+        dispatch(setSearchHistory(localStorage.getItem('searchHistory').split(',')));
+      }
     }
   }, [dispatch, moviePage, sortField, sortType, searchValue, moviesPerPage]);
 
@@ -61,9 +68,23 @@ function Home() {
       const params = qs.parse(window.location.search.substring(1));
 
       console.log('sortField', params.sortField);
-      const sort = sortList.find((obj) => obj.sortProperty === params.sortField);
+      let sort = sortList.find((obj) => obj.sortProperty === params.sortField);
 
-      console.log('sort', sort);
+      if (sort === undefined) {
+        sort = {
+          name: 'году',
+          sortProperty: 'year',
+        };
+      }
+
+      if (![1, -1].includes(params.sortType)) {
+        params.sortType = 1;
+      }
+
+      if (![10, 20, 30].includes(params.moviesPerPage)) {
+        params.moviesPerPage = 10;
+      }
+
       dispatch(setFilters({ ...params, sortField: sort }));
       isSearch.current = true;
     }

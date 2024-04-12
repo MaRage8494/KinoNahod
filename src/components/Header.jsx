@@ -17,8 +17,6 @@ export default function Header() {
   }, [location.pathname]);
 
   const handleLogoClick = () => {
-    console.log(location.search);
-    console.log('location', window.location.search === '');
     if (location.search !== '') {
       dispatch(
         setFilters({
@@ -33,8 +31,8 @@ export default function Header() {
   };
   return (
     <div className="header">
-      <div className="container" onClick={handleLogoClick}>
-        <Link to="/">
+      <div className="container">
+        <Link to="/" onClick={handleLogoClick}>
           <div className="header__logo">
             <img width="38" src={logoSvg} alt="CameraLogo" />
             <div>

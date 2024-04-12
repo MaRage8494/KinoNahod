@@ -2,11 +2,15 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import debounce from 'lodash.debounce';
 
-import { setSearchValue } from '../redux/slices/sortSlice';
+import { addToSearchHistory, setSearchValue } from '../redux/slices/sortSlice';
 
 export const Search = () => {
+  const [isVisible, setVisible] = React.useState(false);
   const [value, setValue] = React.useState('');
-  const searchValue = useSelector((state) => state.sortReducer.searchValue);
+  const { searchValue, searchHistory } = useSelector((state) => state.sortReducer);
+
+  console.log('HISTORY', searchHistory);
+
   const dispatch = useDispatch();
   const inputRef = React.useRef();
 
@@ -20,14 +24,42 @@ export const Search = () => {
     () =>
       debounce((str) => {
         dispatch(setSearchValue(str));
+        if (str !== '') {
+          dispatch(addToSearchHistory(str));
+        }
       }, 1000),
     [dispatch],
   );
+
+  const onClickSearchItem = function (item) {
+    setVisible(false);
+    dispatch(setSearchValue(item));
+    setValue(item);
+    inputRef.current.focus();
+    console.log(item);
+  };
+
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.composedPath().includes(inputRef.current)) {
+        setVisible(false);
+      }
+    };
+    document.body.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.body.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   const onChangeInput = (event) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
   };
+
+  const filteredSuggestions = searchHistory.filter(
+    (item) => item.toLowerCase().includes(value.toLowerCase()) && item !== value,
+  );
 
   console.log(searchValue);
   return (
@@ -49,6 +81,7 @@ export const Search = () => {
       <input
         ref={inputRef}
         value={value}
+        onClick={() => setVisible(true)}
         onChange={(event) => onChangeInput(event)}
         className="header__search__input"
         placeholder="Поиск фильма/сериала..."
@@ -66,6 +99,19 @@ export const Search = () => {
             strokeWidth="1"
           />
         </svg>
+      )}
+      {filteredSuggestions.length > 0 && isVisible ? (
+        <div className="header__search__popup">
+          <ul>
+            {filteredSuggestions.map((obj, index) => (
+              <li key={index} onClick={() => onClickSearchItem(obj)}>
+                {obj}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        ''
       )}
     </div>
   );

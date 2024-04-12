@@ -9,6 +9,7 @@ const initialState = {
   sortType: 1,
   moviePage: 1,
   moviesPerPage: 10,
+  searchHistory: [],
 };
 
 export const sortSlice = createSlice({
@@ -30,6 +31,19 @@ export const sortSlice = createSlice({
     setMoviesPerPage: (state, action) => {
       state.moviesPerPage = Number(action.payload);
     },
+    addToSearchHistory: (state, action) => {
+      if (state.searchHistory.length === 20) {
+        state.searchHistory.unshift(action.payload);
+        state.searchHistory.splice(20, 1);
+      } else {
+        state.searchHistory.unshift(action.payload);
+      }
+      localStorage.setItem('searchHistory', state.searchHistory);
+    },
+    setSearchHistory: (state, action) => {
+      state.searchHistory = action.payload;
+      console.log('state.searchHistory', state.searchHistory);
+    },
     setFilters: (state, action) => {
       state.sortField = action.payload.sortField;
       state.searchValue = action.payload.searchValue;
@@ -47,6 +61,8 @@ export const {
   setMoviePage,
   setMoviesPerPage,
   setFilters,
+  addToSearchHistory,
+  setSearchHistory,
 } = sortSlice.actions;
 
 export default sortSlice.reducer;

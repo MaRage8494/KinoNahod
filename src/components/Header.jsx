@@ -1,11 +1,10 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import React from 'react';
 
 import logoSvg from '../assets/img/camera-logo.svg';
 
 import Search from './Search';
 import { useDispatch } from 'react-redux';
-import { fetchMovies } from '../redux/slices/moviesSlice';
 import { setFilters } from '../redux/slices/sortSlice';
 
 export default function Header() {
@@ -18,15 +17,19 @@ export default function Header() {
   }, [location.pathname]);
 
   const handleLogoClick = () => {
-    dispatch(
-      setFilters({
-        searchValue: '',
-        sortField: 'year',
-        sortType: 1,
-        moviePage: 1,
-        moviesPerPage: 10,
-      }),
-    );
+    console.log(location.search);
+    console.log('location', window.location.search === '');
+    if (location.search !== '') {
+      dispatch(
+        setFilters({
+          searchValue: '',
+          sortField: { name: 'году', sortProperty: 'year' },
+          sortType: 1,
+          moviePage: 1,
+          moviesPerPage: 10,
+        }),
+      );
+    }
   };
   return (
     <div className="header">

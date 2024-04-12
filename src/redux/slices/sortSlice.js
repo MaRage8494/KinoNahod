@@ -25,18 +25,17 @@ export const sortSlice = createSlice({
       state.searchValue = action.payload;
     },
     setMoviePage: (state, action) => {
-      state.moviePage = action.payload;
+      state.moviePage = Number(action.payload);
     },
     setMoviesPerPage: (state, action) => {
-      state.moviesPerPage = action.payload;
+      state.moviesPerPage = Number(action.payload);
     },
     setFilters: (state, action) => {
-      state.currentPage = action.payload.currentPage;
       state.sortField = action.payload.sortField;
       state.searchValue = action.payload.searchValue;
       state.sortType = action.payload.sortType;
-      state.moviePage = action.payload.moviePage;
-      state.moviesPerPage = action.payload.moviesPerPage;
+      state.moviePage = Number(action.payload.moviePage);
+      state.moviesPerPage = Number(action.payload.moviesPerPage);
     },
   },
 });

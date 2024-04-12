@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Pagination } from 'react-bootstrap';
 
 function MyPagination({ pages, currentPage, setCurrentPage }) {
-  console.log(pages);
+  console.log('pages', pages);
   console.log(currentPage);
 
   const prevPageRef = React.useRef(currentPage);
@@ -182,6 +182,7 @@ function MyPagination({ pages, currentPage, setCurrentPage }) {
   useEffect(() => {
     prevPageRef.current = currentPage;
   }, [currentPage]);
+  console.log(prevPageRef.current);
   return <>{pages > 1 ? <Pagination>{renderPaginationItems()}</Pagination> : ''}</>;
 }
 

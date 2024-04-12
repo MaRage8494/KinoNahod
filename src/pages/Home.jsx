@@ -132,29 +132,35 @@ function Home() {
           ))
         )}
       </div>
-      <MyPagination
-        pages={movies.pages}
-        currentPage={moviePage}
-        setCurrentPage={(page) => dispatch(setMoviePage(page))}
-      />
-      <div className="moviePerPage">
-        <p className="moviePerPage__title">Фильмов на странице:</p>
-        <p
-          className={`pageCount ${moviesPerPage === 10 ? 'pageCount--active' : ''}`}
-          onClick={() => dispatch(setMoviesPerPage(10))}>
-          10
-        </p>
-        <p
-          className={`pageCount ${moviesPerPage === 20 ? 'pageCount--active' : ''}`}
-          onClick={() => dispatch(setMoviesPerPage(20))}>
-          20
-        </p>
-        <p
-          className={`pageCount ${moviesPerPage === 30 ? 'pageCount--active' : ''}`}
-          onClick={() => dispatch(setMoviesPerPage(30))}>
-          30
-        </p>
-      </div>
+      {status === 'success' ? (
+        <>
+          <MyPagination
+            pages={movies.pages}
+            currentPage={moviePage}
+            setCurrentPage={(page) => dispatch(setMoviePage(page))}
+          />
+          <div className="moviePerPage">
+            <p className="moviePerPage__title">Фильмов на странице:</p>
+            <p
+              className={`pageCount ${moviesPerPage === 10 ? 'pageCount--active' : ''}`}
+              onClick={() => dispatch(setMoviesPerPage(10))}>
+              10
+            </p>
+            <p
+              className={`pageCount ${moviesPerPage === 20 ? 'pageCount--active' : ''}`}
+              onClick={() => dispatch(setMoviesPerPage(20))}>
+              20
+            </p>
+            <p
+              className={`pageCount ${moviesPerPage === 30 ? 'pageCount--active' : ''}`}
+              onClick={() => dispatch(setMoviesPerPage(30))}>
+              30
+            </p>
+          </div>
+        </>
+      ) : (
+        ''
+      )}
     </>
   );
 }

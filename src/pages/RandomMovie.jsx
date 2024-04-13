@@ -151,7 +151,7 @@ function RandomMovie() {
           <option value="true">Сериал</option>
         </select>
       </div>
-      <div className="w-25">
+      <div className="w-50">
         <label htmlFor="year" className="visually">
           Год выпуска
         </label>
@@ -166,7 +166,7 @@ function RandomMovie() {
           disableSwap
         />
       </div>
-      <div className="w-25">
+      <div className="w-50">
         <label htmlFor="rating" className="visually">
           Рейтинг кинопоиска
         </label>

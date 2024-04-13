@@ -76,7 +76,7 @@ function Reviews({ reviews, pages, movieId }) {
                   <div className="reviews__header">
                     <h2 className="reviews__header__title">{review.title || 'Без заголовка'}</h2>
                     <div className="reviews__header__author">
-                      <p>Пользователь: {review.author || 'аноним'}</p>
+                      <p>{review.author || 'аноним'}</p>
                       <p>(Рейтинг: {review.userRating || '0'})</p>
                     </div>
                   </div>

@@ -1,0 +1,18 @@
+@import '../variables';
+
+.skeleton {
+  &__mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .skeleton {
+    &__primary {
+      display: none;
+    }
+    &__mobile {
+      display: unset;
+    }
+  }
+}

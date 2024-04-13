@@ -9,7 +9,7 @@ function SimilarMovies({ movies }) {
   }
   return (
     <>
-      <Carousel className="carousel carousel--similar" data-bs-theme="dark">
+      <Carousel className="carousel--similar carousel" data-bs-theme="dark">
         {movies.map((movie) => (
           <Carousel.Item className="carousel__item" key={movie.id}>
             <Link to={`/movie/${movie.id}`}>

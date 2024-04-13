@@ -6,9 +6,11 @@
 
 .info-poster {
   width: 300px;
+  height: 450px;
 }
 
 .info {
+  position: relative;
   display: flex;
   justify-content: space-between;
   &__title {
@@ -32,6 +34,18 @@
       background-color: #ff2c2c;
     }
   }
+
+  @media (max-width: 480px) {
+    &__title {
+      font-size: 45px;
+      text-align: center;
+    }
+    &__rating {
+      position: absolute;
+      top: -470px;
+      right: 0;
+    }
+  }
 }
 
 .info-description {
@@ -43,6 +57,9 @@
   &__text {
     font-size: 20px;
   }
+  @media (max-width: 480px) {
+    margin-top: 30px;
+  }
 }
 
 .description {
@@ -51,4 +68,12 @@
 
 .stub {
   text-align: center;
+}
+
+@media (max-width: 800px) {
+  .info-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

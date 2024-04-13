@@ -93,7 +93,7 @@
     }
 
     h1 {
-      color: #181818;
+      color: $black;
       font-size: 24px;
       letter-spacing: 1%;
       text-transform: uppercase;
@@ -102,6 +102,107 @@
 
     p {
       color: #7b7b7b;
+    }
+  }
+  @media (max-width: 1220px) {
+    &__logo {
+      display: flex;
+
+      img {
+        margin-right: 15px;
+        margin-bottom: 15px;
+        width: 50px;
+      }
+
+      h1 {
+        color: $black;
+        font-size: 24px;
+        font-weight: 800;
+      }
+
+      p {
+        color: #7b7b7b;
+        font-size: 14px;
+      }
+    }
+    &__search {
+      position: relative;
+      &__input {
+        width: 300px;
+      }
+      &__popup {
+        width: 300px;
+        height: fit-content;
+      }
+    }
+  }
+
+  @media (max-width: 1102px) {
+    &__login {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: end;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0px 0px;
+      justify-items: center;
+      grid-template-areas:
+        'logo buttons'
+        'search .';
+    }
+    &__search {
+      grid-area: search;
+      grid-column: span 2;
+      &__input {
+        width: 400px;
+      }
+      &__popup {
+        width: 400px;
+        height: fit-content;
+      }
+    }
+    &__logo {
+      grid-area: logo;
+    }
+    &__login {
+      grid-area: buttons;
+    }
+  }
+  @media (max-width: 630px) {
+    .container {
+      height: fit-content;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas:
+        'buttons'
+        'logo'
+        'search';
+    }
+    &__login {
+      align-items: center;
+      flex-direction: row;
+    }
+    &__logo {
+      margin-right: 30px;
+      margin-top: 30px;
+    }
+    padding-bottom: 0;
+  }
+  @media (max-width: 550px) {
+    &__search {
+      &__input {
+        width: 300px;
+      }
+      &__popup {
+        width: 300px;
+        height: fit-content;
+      }
     }
   }
 }

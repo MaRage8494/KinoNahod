@@ -150,7 +150,30 @@
   }
 
   &--logout {
-    margin-left: 20px;
+    margin-left: 30px;
+  }
+  &--random {
+    margin-left: 30px;
+  }
+  @media (max-width: 1100px) {
+    &--random {
+      margin-top: 10px;
+    }
+    &--logout {
+      width: 100px;
+    }
+  }
+  @media (max-width: 630px) {
+    &--random {
+      margin-left: 0px;
+      margin-right: 10px;
+      margin-top: 0;
+    }
+    &--logout {
+      margin-left: 0px;
+      margin-bottom: 0;
+      width: 100px;
+    }
   }
 }
 

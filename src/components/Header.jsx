@@ -38,9 +38,15 @@ export default function Header() {
     }
   };
   return (
-    <div className="header">
+    <header className="header">
       <div className="container">
-        <Link to="/" onClick={handleLogoClick}>
+        <Link
+          to="/"
+          onClick={handleLogoClick}
+          style={{
+            display: 'grid',
+            gridArea: 'logo',
+          }}>
           <div className="header__logo">
             <img width="38" src={logoSvg} alt="CameraLogo" />
             <div>
@@ -68,6 +74,6 @@ export default function Header() {
           </div>
         )}
       </div>
-    </div>
+    </header>
   );
 }

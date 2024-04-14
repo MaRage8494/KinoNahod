@@ -10,8 +10,6 @@ export default function Sort({ value, method, onChangeSort, onChangeType }) {
   const [isVisible, setVisible] = React.useState(false);
   const sortRef = React.useRef();
 
-  console.log(value);
-
   const onClickListItem = function (obj) {
     onChangeSort(obj);
     setVisible(false);

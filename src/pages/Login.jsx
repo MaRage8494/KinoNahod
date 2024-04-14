@@ -27,12 +27,10 @@ function Login() {
   });
 
   const onSubmit = (values) => {
-    console.log(values);
-
     if (values.email === user.email && values.password === user.password) {
       const dataString = JSON.stringify(values);
       const encryptedData = CryptoJS.AES.encrypt(dataString, key).toString();
-      console.log(encryptedData);
+
       window.localStorage.setItem('token', encryptedData);
       dispatch(setToken(window.localStorage.setItem('token', encryptedData)));
 

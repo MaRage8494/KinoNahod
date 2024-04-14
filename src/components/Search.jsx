@@ -9,8 +9,6 @@ export const Search = () => {
   const [value, setValue] = React.useState('');
   const { searchValue, searchHistory } = useSelector((state) => state.sortReducer);
 
-  console.log('HISTORY', searchHistory);
-
   const dispatch = useDispatch();
   const inputRef = React.useRef();
 
@@ -36,7 +34,6 @@ export const Search = () => {
     dispatch(setSearchValue(item));
     setValue(item);
     inputRef.current.focus();
-    console.log(item);
   };
 
   React.useEffect(() => {
@@ -61,7 +58,6 @@ export const Search = () => {
     (item) => item.toLowerCase().includes(value.toLowerCase()) && item !== value,
   );
 
-  console.log(searchValue);
   return (
     <div className="header__search">
       <svg

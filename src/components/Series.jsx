@@ -9,10 +9,7 @@ function Series({ seriesInfo }) {
   }
 
   const visibleSeasons = seriesInfo.slice((currentPage - 1) * 5, currentPage * 5);
-  console.log(seriesInfo.length / 5);
   const pages = Math.ceil(seriesInfo.length / 5);
-  console.log(pages);
-  console.log(seriesInfo);
 
   return (
     <>

@@ -18,8 +18,6 @@ function Actors({ actors }) {
 
   const visibleActors = uniqueActors.slice((active - 1) * 10, active * 10);
 
-  console.log(uniqueActors, pages, visibleActors);
-
   return (
     <>
       <div className="actors">

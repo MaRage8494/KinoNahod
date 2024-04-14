@@ -42,7 +42,6 @@ export const sortSlice = createSlice({
     },
     setSearchHistory: (state, action) => {
       state.searchHistory = action.payload;
-      console.log('state.searchHistory', state.searchHistory);
     },
     setFilters: (state, action) => {
       state.sortField = action.payload.sortField;

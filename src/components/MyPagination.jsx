@@ -2,8 +2,6 @@ import React from 'react';
 import { Pagination } from 'react-bootstrap';
 
 function MyPagination({ pages, currentPage, setCurrentPage }) {
-  console.log('pages', pages);
-
   const handlePageChange = React.useCallback(
     (page) => {
       if (page !== currentPage) {

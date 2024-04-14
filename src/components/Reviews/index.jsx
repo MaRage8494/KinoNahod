@@ -40,8 +40,6 @@ function Reviews({ reviews, pages, movieId }) {
     titleRef?.current?.scrollIntoView();
   }, [currentPage, movieId]);
 
-  console.log(reviews);
-
   if (!reviewsData || !Array.isArray(reviewsData.docs) || reviewsData.docs.length === 0) {
     return <h2 className="stub">Нет информации об отзывах пользователей</h2>;
   }
@@ -51,7 +49,6 @@ function Reviews({ reviews, pages, movieId }) {
   });
 
   const visibleReviews = uniqueReviews;
-  console.log(visibleReviews);
 
   return (
     <>

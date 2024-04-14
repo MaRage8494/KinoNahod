@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function SimilarMovies({ movies }) {
-  console.log(movies);
   if (!movies || movies.length === 0) {
     return <h2 className="stub">Нет информации о похожих фильмах</h2>;
   }

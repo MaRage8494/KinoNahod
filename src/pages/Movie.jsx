@@ -37,9 +37,6 @@ function Movie() {
     fetchMovieInfoData();
   }, [fetchMovieInfoData]);
 
-  console.log(movieData, postersData, reviewsData, status);
-  console.log('reviews', reviewsData);
-
   // console.log(euphoria);
   // React.useEffect(() => {
   //   setMovieData(euphoria);

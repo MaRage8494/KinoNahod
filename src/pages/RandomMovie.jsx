@@ -63,7 +63,6 @@ function RandomMovie() {
     if (!token) {
       navigate('/login');
     }
-    console.log('token', token);
   }, [navigate, token]);
 
   const onSubmit = (values) => {
@@ -81,13 +80,6 @@ function RandomMovie() {
     } catch (err) {
       console.error('Ошибка при запросе', err);
     }
-    console.log('Поиск рандомного фильма с учетом фильтров:');
-    console.log('Жанр:', values.genre);
-    console.log('Страна:', values.country.charAt(0).toUpperCase() + values.country.slice(1));
-    console.log('Тип контента:', values.type);
-    console.log('Год выпуска:', year);
-    console.log('Рейтинг:', rating);
-    console.log('Сеть производства:', values.networks);
   };
 
   React.useEffect(() => {

@@ -32,16 +32,10 @@ function Home() {
     (state) => state.sortReducer,
   );
 
-  console.log('attempt', attempts);
-  console.log('status', status);
-
   const dispatch = useDispatch();
-
-  console.log(movies);
 
   const fetchMoviesData = React.useCallback(async () => {
     try {
-      console.log(sortField, sortType, moviePage, moviesPerPage, searchValue);
       dispatch(
         fetchMovies({
           moviePage,
@@ -51,12 +45,11 @@ function Home() {
           moviesPerPage,
         }),
       );
-      console.log(window.localStorage.getItem('searhHistory'));
+
       window.scrollTo(0, 0);
     } catch (err) {
       console.error('Ошибка при получении фильмов:', err);
     } finally {
-      console.log('localStorage', window.localStorage.getItem('searchHistory'));
       if (window.localStorage.getItem('searchHistory')) {
         dispatch(setSearchHistory(window.localStorage.getItem('searchHistory').split(',')));
       }
@@ -67,7 +60,6 @@ function Home() {
     if (window.location.search) {
       const params = qs.parse(window.location.search.substring(1));
 
-      console.log('sortField', params.sortField);
       let sort = sortList.find((obj) => obj.sortProperty === params.sortField);
 
       if (sort === undefined) {

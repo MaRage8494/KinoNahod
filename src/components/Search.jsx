@@ -7,7 +7,7 @@ import { addToSearchHistory, setSearchValue } from '../redux/slices/sortSlice';
 export const Search = () => {
   const [isVisible, setVisible] = React.useState(false);
   const [value, setValue] = React.useState('');
-  const { searchValue, searchHistory } = useSelector((state) => state.sortReducer);
+  const { searchHistory } = useSelector((state) => state.sortReducer);
 
   const dispatch = useDispatch();
   const inputRef = React.useRef();

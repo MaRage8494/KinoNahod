@@ -2,12 +2,8 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from '../../conf/axios.js';
 
 export const fetchMovieInfo = createAsyncThunk('movieInfo/fetchMovieInfo', async ({ id }) => {
-  const { data: movieResponse } = await axios.get(`/movie/${id}`);
-  const { data: postersResponse } = await axios.get(
-    `/image?page=1&limit=10&selectFields=previewUrl&movieId=${id}`,
-  );
-  const { data: reviewsResponse } = await axios.get(`review?page=1&limit=5&movieId=${id}`);
-
+  const { data } = await axios.get(`/movie/${id}`);
+  const { movieResponse, postersResponse, reviewsResponse } = data;
   return { movieResponse, postersResponse, reviewsResponse };
 });
 

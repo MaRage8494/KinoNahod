@@ -1,27 +1,30 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import React from 'react';
 
 import logoSvg from '../assets/img/camera-logo.svg';
 
 import Search from './Search';
 import { useDispatch, useSelector } from 'react-redux';
-import { setToken } from '../redux/slices/loginSlice';
 import { setFilters } from '../redux/slices/sortSlice';
+import { logout, selectIsAuth } from '../redux/slices/auth.js';
 
 export default function Header() {
   let location = useLocation();
+  const navigate = useNavigate();
 
-  const { token } = useSelector((state) => state.loginReducer);
   const dispatch = useDispatch();
+  const isAuth = useSelector(selectIsAuth);
   const [path, setPath] = React.useState(location.pathname);
   React.useEffect(() => {
     setPath(location.pathname);
-    dispatch(setToken(window.localStorage.getItem('token')));
-  }, [location.pathname, dispatch]);
+  }, [location.pathname]);
 
-  const logoutHandler = () => {
-    window.localStorage.removeItem('token');
-    dispatch(setToken(''));
+  const onClickLogout = () => {
+    if (window.confirm('Вы точно хотите выйти?')) {
+      dispatch(logout());
+      window.localStorage.removeItem('token');
+      navigate('/');
+    }
   };
 
   const handleLogoClick = () => {
@@ -57,12 +60,12 @@ export default function Header() {
         </Link>
 
         {path === '/' ? <Search /> : ''}
-        {token ? (
+        {isAuth ? (
           <div className="header__login">
             <Link to="/random" className="button button--random">
               <span>Рандомный фильм</span>
             </Link>
-            <div onClick={() => logoutHandler()} className="button button--logout">
+            <div onClick={() => onClickLogout()} className="button button--logout">
               <span>Выйти</span>
             </div>
           </div>

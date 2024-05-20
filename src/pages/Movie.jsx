@@ -37,12 +37,6 @@ function Movie() {
     fetchMovieInfoData();
   }, [fetchMovieInfoData]);
 
-  // console.log(euphoria);
-  // React.useEffect(() => {
-  //   setMovieData(euphoria);
-  //   setLoading(false);
-  // }, []);
-
   return (
     <>
       {status === 'loading' ? (

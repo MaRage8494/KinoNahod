@@ -10,12 +10,13 @@ import { useForm } from 'react-hook-form';
 import Slider from '@mui/material/Slider';
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
+import { selectIsAuth } from '../redux/slices/auth';
 
 function RandomMovie() {
   const navigate = useNavigate();
-  const { token } = useSelector((state) => state.loginReducer);
   const { status, result, isLoading } = useSelector((state) => state.randomReducer);
   const dispatch = useDispatch();
+  const isAuth = useSelector(selectIsAuth);
 
   const [year, setYear] = React.useState([1970, 2024]);
   const [rating, setRating] = React.useState([0, 10]);
@@ -60,10 +61,10 @@ function RandomMovie() {
   });
 
   React.useEffect(() => {
-    if (!token) {
+    if (!isAuth) {
       navigate('/login');
     }
-  }, [navigate, token]);
+  }, [navigate, isAuth]);
 
   const onSubmit = (values) => {
     try {

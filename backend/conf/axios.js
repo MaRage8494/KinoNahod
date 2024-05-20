@@ -1,7 +1,8 @@
 import axios from 'axios';
+import 'dotenv/config.js';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:4444',
+  baseURL: 'https://api.kinopoisk.dev/v1.4',
   headers: {
     'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/json',
@@ -9,7 +10,7 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use((config) => {
-  config.headers.Authorization = window.localStorage.getItem('token');
+  config.headers['X-API-KEY'] = process.env.TOKEN;
 
   return config;
 });

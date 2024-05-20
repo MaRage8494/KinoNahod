@@ -25,9 +25,12 @@ function Reviews({ reviews, pages, movieId }) {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const reviewsResponse = await axios.get(
-          `review?page=${currentPage}&limit=5&movieId=${movieId}`,
-        );
+        const reviewsResponse = await axios.get(`/reviews`, {
+          params: {
+            page: currentPage,
+            movieId,
+          },
+        });
         setReviews(reviewsResponse.data);
       } catch (error) {
         console.error('Ошибка при получении данных:', error);
@@ -66,8 +69,8 @@ function Reviews({ reviews, pages, movieId }) {
                     review.type === 'Нейтральный'
                       ? 'neutral'
                       : review.type === 'Позитивный'
-                      ? 'positive'
-                      : 'negative'
+                        ? 'positive'
+                        : 'negative'
                   }`}
                   key={review.id}>
                   <div className="reviews__header">

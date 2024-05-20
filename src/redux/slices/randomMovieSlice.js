@@ -14,7 +14,7 @@ export const fetchRandom = createAsyncThunk(
     if (country !== '') params['countries.name'] = country;
     if (network !== '') params['networks.items.name'] = network;
 
-    const { data } = await axios.get('movie/random?notNullFields=name&notNullFields=poster.url', {
+    const { data } = await axios.get('/random', {
       params,
     });
 

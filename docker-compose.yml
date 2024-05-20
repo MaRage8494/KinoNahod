@@ -1,9 +1,15 @@
-version: '3.8'
-
+version: '3'
 services:
-  react:
+  backend:
     build:
-      context: .
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - '4444:4444' # Проброс портов для доступа к бэкенду
+
+  frontend:
+    build:
+      context: ./
       dockerfile: Dockerfile
     ports:
       - '7070:80'

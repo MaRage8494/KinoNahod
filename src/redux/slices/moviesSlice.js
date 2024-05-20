@@ -4,28 +4,31 @@ import axios from '../../conf/axios.js';
 export const fetchMovies = createAsyncThunk(
   'movies/fetchMovies',
   async ({ moviePage, sortField, sortType, searchValue, moviesPerPage }) => {
-    if (searchValue !== '') {
-      const { data } = await axios.get(`/movie/search?`, {
-        params: {
-          limit: moviesPerPage,
-          page: moviePage,
-          query: searchValue,
-        },
-      });
-
-      return data;
-    } else {
-      const { data } = await axios.get(`/movie?lists=top250`, {
-        params: {
-          limit: moviesPerPage,
-          page: moviePage,
-          sortField: sortField,
-          sortType: sortType,
-          notNullFields: 'poster.url',
-        },
-      });
-
-      return data;
+    try {
+      if (searchValue !== '') {
+        const { data } = await axios.get(`/movies/search`, {
+          params: {
+            limit: moviesPerPage,
+            page: moviePage,
+            query: searchValue,
+          },
+        });
+        return data;
+      } else {
+        const { data } = await axios.get(`/movies`, {
+          params: {
+            lists: 'top250',
+            limit: moviesPerPage,
+            page: moviePage,
+            sortField: sortField,
+            sortType: sortType,
+            notNullFields: 'poster.url',
+          },
+        });
+        return data;
+      }
+    } catch (err) {
+      throw err; // Пробросьте ошибку, чтобы она была обработана как отклоненный запрос
     }
   },
 );
@@ -58,8 +61,9 @@ const moviesSlice = createSlice({
         state.status = 'success';
         state.attempts = 0;
       })
-      .addCase(fetchMovies.rejected, (state) => {
+      .addCase(fetchMovies.rejected, (state, action) => {
         state.status = 'error';
+        state.error = action.error.message; // Добавляем сообщение об ошибке для отладки или отображения пользователю
         state.items = [];
       });
   },

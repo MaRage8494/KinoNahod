@@ -8,8 +8,8 @@ RUN npm install
 
 COPY . .
 
-ARG TOKEN
-ENV TOKEN=*ВВЕДИТЕ СЮДА ВАШ ТОКЕН*
+# ARG TOKEN
+# ENV TOKEN=WXEAADB-ZND4JA9-K7ZTDN3-NF7H1MW
 
 RUN npm run build
 

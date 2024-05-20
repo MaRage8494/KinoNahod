@@ -16,6 +16,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
+    "concurrently": "^8.2.2",
     "crypto-js": "^4.2.0",
     "lodash.debounce": "^4.0.8",
     "qs": "^6.12.0",
@@ -32,9 +33,9 @@
     "sass": "^1.74.1"
   },
   "scripts": {
-    "start": "react-dotenv && PORT=7070 react-scripts start",
-    "build": "react-dotenv && react-scripts build",
-    "test": "react-dotenv && NODE_OPTIONS=--experimental-vm-modules react-scripts test",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "NODE_OPTIONS=--experimental-vm-modules react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

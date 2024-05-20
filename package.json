@@ -34,6 +34,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:both": "concurrently \"npm run start\" \"cd backend && node index.js\"",
     "build": "react-scripts build",
     "test": "NODE_OPTIONS=--experimental-vm-modules react-scripts test",
     "eject": "react-scripts eject"
